@@ -1,0 +1,5 @@
+Fairdice<-function(n){
+ans<-ceiling(runif(n,0,6))
+return(ans)
+}
+

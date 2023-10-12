@@ -1,0 +1,5 @@
+Unfairdice<-function(n,p){
+probvec<-c(rep((1-p)/5,5),p)
+ans<-sample(c(1,2,3,4,5,6),size=n,prob=probvec,replace=TRUE)
+return(ans)}
+
