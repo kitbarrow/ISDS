@@ -1,0 +1,84 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+\input{header}
+
+\title{Introduction to Statistics for DS \\ Week 3}
+\author{Zehao Qian}
+\begin{document}
+\maketitle
+
+
+\section{QA}
+The total weight of Quiz's daily breakfast is the sum of the weights of biscuits and meat.
+
+\begin{itemize}
+    \item Mean of biscuits = 80g
+    \item Mean of meat = 150g
+    \item Total mean weight = Mean of biscuits + Mean of meat = 80g + 150g = 230g
+\end{itemize}
+
+\paragraph{Since the amounts are independent, the variances add:}
+
+\begin{itemize}
+    \item $ Variance\ of\ biscuits = (Standard\ deviation\ of\ biscuits)^2 = 5^2g $
+    \item $ Variance\ of\ meat = (Standard\ deviation\ of\ meat)^2 = 8^2g $
+\end{itemize}
+
+
+$$ Total\ variance\ of\ the\ daily\ breakfast \\ = Variance\ of\ biscuits + Variance\ of\ meat \\ = 5^2g + 8^2g = 89g $$
+
+
+\paragraph{So, the standard deviation of the daily breakfast is the square root of the total variance: $ \sqrt{89}g$}
+\section{QB}
+$$ 5\ Days\ Mean = 5 * Total mean weight $$
+$$ 5\ Days\ standard\ deviation= 25* Total\ variance\ of\ the\ daily\ breakfast$$
+
+\textcolor{red}{\paragraph{\textbf{Prove That:}}
+    $$ Var(aX)=a^2 Var(X)$$
+    \begin{enumerate}
+        \item Start with the definition of variance: $ Var(aX) = E[(aX - E[aX])^2] $
+        \item Expand the square and use the linearity of expectations: $ Var(aX) = E[(a^2X^2 - 2aXE[aX] + (E[aX])^2)] $
+        \item Use the linearity of expectations to separate the terms: $ Var(aX) = a^2E[X^2] - 2aE[X]E[aX] + (E[aX])^2 $
+        \item Since "a" is a constant, E[aX] = aE[X]: $ Var(aX) = a^2E[X^2] - 2a^2E[X]E[X] + (aE[X])^2 $
+        \item Simplify: $Var(aX) = a^2E[X^2] - 2a^2(E[X])^2 + a^2(E[X])^2$
+        \item Combine like terms: $Var(aX) = a^2E[X^2] - a^2(E[X])^2$
+        \item Notice that $a^2$ is a constant, so you can factor it out: $Var(aX) = a^2(E[X^2] - (E[X])^2)$
+        \item Recall that $Var(X) = E[X^2] - (E[X])^2$: $Var(aX) = a^2 Var(X)$
+    \end{enumerate}}
+
+
+
+\paragraph{\textbf{Important Conclusion:}}
+\begin{enumerate}
+    \item $E(X+Y)=E(X)+E(Y)$
+    \item $E(aX)=aE(X)$
+    \item $Var(aX)=a^2 Var(X)$
+    \item $Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)$
+    \item $Var(aX+bY)=a^2 Var(X)+b^2 Var(Y)+2ab Cov(X,Y)$
+\end{enumerate}
+
+\section{QC}
+\paragraph{\textbf{Given:}}
+\begin{itemize}
+    \item $ \lambda_{weekday\ biscuits}=80 $, $ \sigma_{weekday\ biscuits}=5$
+    \item $ \lambda_{weekday\ meat}=150 $, $ \sigma_{weekday\ meat}=8 $
+    \item $ \lambda_{weekends\ biscuits}=80 $, $ \sigma_{weekends\ biscuits}=2$
+    \item $ \lambda_{weekends\ biscuits}=150 $, $ \sigma_{weekends\ biscuits}=3$
+\end{itemize}
+
+
+
+\section{QD: Effect on Covariance Between Biscuit Weight and Meat Weight}
+\paragraph{The covariance between two random variables X and Y is defined as:}
+$$ Cov(X, Y) = E[(X - E[X]) * (Y - E[Y])] $$
+
+\paragraph{The covariance between biscuit weight and meat weight measures the joint variability of these two variables. If you change your measurement method and start measuring less meat when you think you've measured more biscuits, it means that the two variables are no longer independent. This change in measurement approach may lead to a decrease in their covariance.}
+\paragraph{The effect on the covariance between biscuit weight and meat weight would depend on how you adapt your measurements based on your perception of biscuit measurements. If your adjustments make the two variables less correlated, the covariance will decrease. If your adjustments make them more correlated, the covariance will increase. The exact effect on the covariance would require a detailed analysis of the measurement adjustments you make.}
+
+\end{document}
+
