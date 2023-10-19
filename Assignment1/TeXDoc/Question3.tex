@@ -1,0 +1,30 @@
+\section{Question 3}
+\subsection{Expected number of party poppers}
+$$ E(X)=Probability\ of\ failure * Total\ number\ of\ party\ poppers $$
+$$ E(X)=0.6\% *200=1.2 $$
+% 
+\subsection{Distribution of fail poppers}
+\subsubsection{Poisson distribution}
+\paragraph{To represent the number of party poppers that fail to go off in a box as a random variable, X, we can use the Poisson distribution. In this case, the Poisson distribution is appropriate because it models the number of events (party poppers failing to go off) that occur in a fixed interval (a box of party poppers) when the events are rare and random.}
+% 
+\paragraph{The parameter, $\lambda$ (lambda), is the average number of events in the fixed interval. Here, $\lambda$ is equal to the expected number of party poppers that will fail to go off, which was calculated in Part 1.}
+% 
+% 
+\subsubsection{The assumptions that need to hold for justifying the use of the Poisson distribution}
+\begin{itemize}
+    \item Events (party poppers failing to go off) occur randomly.
+    \item Events are rare, meaning the probability of more than one event occurring in a very short time period is negligible.
+    \item Events are independent of each other.
+\end{itemize}
+% 
+% 
+% 
+\subsection{Distribution of mistake box}
+\subsubsection{Distribution for Y}
+\paragraph{For the random variable Y, representing the number of party poppers that fail to go off in a box of 2 (due to the administrative error), you can still use the Poisson distribution with the same $\lambda$ value as calculated in Question 3.1, which is based on the company's claim.}
+
+\subsubsection{$E(Y)$ and $Var(Y)$}
+\paragraph{According to Poisson Distribution, PMF is:}
+$$ P(Y=k)=\frac{e^{- \lambda} \lambda^k}{k!} $$
+$$ E(Y)= \mu = \lambda $$
+$$ Var(Y) = \sigma^2 = \lambda $$
