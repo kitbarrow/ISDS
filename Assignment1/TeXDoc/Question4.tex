@@ -2,11 +2,35 @@
 \subsection{Calculate $P(X=4)$}
 \paragraph{Poisson probability formula is: $ P(X=k)=\frac{e^{- \lambda} \lambda^k}{k!} $}
 \paragraph{In this case, $k=4$ and $\lambda=0.4$:}
-$$ P(X=4)=\frac{e^{-0.4}*0.4^4}{4!} $$
+$$ P(X=4)=\frac{e^{-0.4}*0.4^4}{4!}=0.000715008 $$
 \subsection{Calculate $P(X<3)$}
-$$ P(X<3)=P(X=0)+P(X=1)+P(X=2)$$
+$$ P(X<3)=P(X=0)+P(X=1)+P(X=2) =0.9920737 $$
 \subsection{Calculate $P(Y=4 | Y \ge 3)$}
 \paragraph{The conditional probability of an event A given event B is defined as:}
 $$ P(A|B)=\frac{P(AB)}{B}$$
-\paragraph{The $P(Y=4 | Y \ge 3)$ equals to $\frac{P(Y=4 \cap Y \ge 3)}{P(Y \ge 3)}$}, $P(Y=4 \cap Y \ge 3) = P(Y=4)$.
-\paragraph{$P(Y \ge 3)=1-P(Y < 3)$}
+\paragraph{The $P(Y=4 | Y \ge 3)$ equals to $\frac{P(Y=4 \cap Y \ge 3)}{P(Y \ge 3)}$}
+% 
+\begin{equation*}
+    \left.
+    \begin{array}{ll}
+        P(Y=4 \cap Y \ge 3) = P(Y=4) \\
+        P(Y \ge 3)=1-P(Y < 3)
+    \end{array}
+    \right\}
+    \Rightarrow
+    P(Y=4 | Y \ge 3)=\frac{0.000715008}{1-0.9920737}=0.090207
+\end{equation*}
+\textbf{An easier way to Calculate via R}
+% 
+\begin{lstlisting}[style=rstyle]
+# set lambda
+lambda = 0.4
+
+# calculatP(X = 4)
+probability <- dpois(4, lambda)
+cat("P(X = 4) =", probability, "\n")
+
+# calculateP(X < 3)
+probability <- ppois(2, lambda)
+cat("P(X <3) =", probability, "\n")
+\end{lstlisting}
