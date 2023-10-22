@@ -51,13 +51,32 @@
 
 % R code support
 \usepackage{listings}
-\lstset{language=R,  % 设置语言为R
-        basicstyle=\ttfamily, % 设置字体样式
-        numbers=left,  % 行号显示在左侧
-        numberstyle=\small\color{blue},  % 行号样式
-        frame=single,  % 设置代码块的边框
-        backgroundcolor=\color{lightgray},  % 设置代码块的背景颜色
-        }
+% \lstset{language=R,  % 设置语言为R
+%         basicstyle=\ttfamily, % 设置字体样式
+%         numbers=left,  % 行号显示在左侧
+%         numberstyle=\small\color{blue},  % 行号样式
+%         frame=single,  % 设置代码块的边框
+%         backgroundcolor=\color{lightgray},  % 设置代码块的背景颜色
+%         }
 
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{amsmath}
+
+
+
+
+
+% 设置R语言代码高亮
+\lstdefinestyle{rstyle}{
+  language=R,
+  basicstyle=\ttfamily,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  commentstyle=\color{green!40!black},
+  keywordstyle=\color{blue},
+  stringstyle=\color{purple},
+  morekeywords={read.csv},
+  frame=single,
+  breaklines=true
+}

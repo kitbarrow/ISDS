@@ -6,7 +6,7 @@ rm(list = ls())
 data(ToothGrowth)
 
 # Find the modal tooth length
-modal_tooth_length1 = as.numeric(names(sort(
+modal_tooth_length = as.numeric(names(sort(
   table(ToothGrowth$len), decreasing = TRUE)[1]))
 
 
@@ -22,5 +22,4 @@ boxplot(len ~ supp, data = ToothGrowth,
         col = c("lightblue", "lightgreen"),
         xlab = "Supplement Type", ylab = "Tooth Length",
         main = "Tooth Length by Supplement Type")
-legend("topright", legend = c("Ascorbic Acid", "Orange Juice"),
-       fill = c("lightblue", "lightgreen"))
+
