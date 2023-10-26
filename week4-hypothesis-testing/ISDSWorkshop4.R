@@ -1,14 +1,34 @@
-#Example 
+# clear the console area
+cat("\014")
+# clear the environment var area
+rm(list = ls())
 
-#A company claim their fun-size packets of sweet contain an average of 29g of sweets.
+# Example
+
+# A company claim their fun-size packets of sweet contain an average of 29g of sweets.
 # A statistics student buys a bag of the company's sweets. The bag contains 15 fun-size packets.
-#The student weighs the contents of each packet, getting the following weights in grammes (g):
-#27.3, 30.9, 25.9, 31.2, 29.7, 28.8, 29.4, 28.5, 28.9, 31.6, 27.8, 27.8, 28.6, 27.3, 27.6
+# The student weighs the contents of each packet, getting the following weights in grammes (g):
+# 27.3, 30.9, 25.9, 31.2, 29.7, 28.8, 29.4, 28.5, 28.9, 31.6, 27.8, 27.8, 28.6, 27.3, 27.6
 # Is the company's claim defensible?
 
-#We check with a hypothesis test
+# We check with a hypothesis test
 
-sweets<-c(27.3, 30.9, 25.9, 31.2, 29.7, 28.8, 29.4, 28.5, 28.9, 31.6, 27.8, 27.8, 28.6, 27.3, 27.6)
+sweets <-
+  c(27.3,
+    30.9,
+    25.9,
+    31.2,
+    29.7,
+    28.8,
+    29.4,
+    28.5,
+    28.9,
+    31.6,
+    27.8,
+    27.8,
+    28.6,
+    27.3,
+    27.6)
 
 #Firstly, this is a small sample size (n=15<30), so we can only proceed with the hypothesis test if we believe the data is normally distributed
 
@@ -30,53 +50,56 @@ shapiro.test(sweets)
 
 #To find the test statistic, we need the sample mean x bar, and the sample standard deviation s:
 
-xbar<-mean(sweets)
-s<-sd(sweets)
+xbar <- mean(sweets)
+s <- sd(sweets)
 
 #We can now find the test statistic, which equals (xbar - mu)/(s/sqrt(n)). Under H0, mu=29, which is what we use.
 
-Tstat<-(xbar-29)/(s/sqrt(15))
+Tstat <- (xbar - 29) / (s / sqrt(15))
 Tstat
 
 #Note that the negative value of Tstat tells us that the sample mean is less than 29, so there is at least some evidence the bags are lighter on average than claimed.
 
 #We now have two options: calculate the p-value, or directly compare the value of Tstat against the critical value.
 
-#We'll start with the critical value. We have n<30, so we have to use a t-distribution. 15 data points means using t_14. 
+#We'll start with the critical value. We have n<30, so we have to use a t-distribution. 15 data points means using t_14.
 
 #We find the critical value t_14,0.05 (sometimes expressed as t_0.05,14) using the qt function.
 
 #Good practice to draw a quick sketch of the t-distribution and the areas that would result in rejecting H0 - these areas are what we call the *critical region*.
 
-qt(0.975,14)
+qt(0.975, 14)
 
 #So a statistically significant result here requires Tstat be either above 2.145, or below -2.145. Neither are the case, so H0 is *not* rejected.
 
 #Now let's find the p-value for the test. Remember that qt and pt do essentially opposite jobs
 
-pt(-0.5987803,14)
+pt(-0.5987803, 14)
 
-#The probability of a realisation from t_14 being less than the test statistic is 0.2794. 
+#The probability of a realisation from t_14 being less than the test statistic is 0.2794.
 #The probability of a realisation from t_14 being more than the test statistic times -1 (giving a positive value) must also be 0.2794.
 #The probability of a realisation from t_14 lying outside either value is therefore 0.2794*2.
 
-0.2794*2
+0.2794 * 2
 
-#This is therefore the p-value of the test. 
+#This is therefore the p-value of the test.
 #Note that we already knew the p value must be above 0.05, because the test did not result in us rejecting H0.
 
 #We now know how to perform a hypothesis test step by step in R. There is a much, much faster way, so long as we're OK using the t-distribution to find critical values and p-values
 
-t.test(sweets,alternative="two.sided",mu=29,conf.level=0.95)
-
+test_out = t.test(sweets,
+                  alternative = "two.sided",
+                  mu = 29,
+                  conf.level = 0.95)
+test_out
 #END OF PART 1
 
 #------------------------------------
 
 #We've seen already how to get realisations from various distributions using e.g. rnorm, runif, rbinom, etc.
-#One thing we haven't covered is how to get realisations from a distribution we define ourselves. 
+#One thing we haven't covered is how to get realisations from a distribution we define ourselves.
 
-#We'll do this now (for the discrete case)#Example: An environmental agency wants to track the number of 
+#We'll do this now (for the discrete case)#Example: An environmental agency wants to track the number of
 #polar bear cubs in Churchill, Canada.#Polar bears have more cubs when the surrounding environment is favourable,
 #so checking cub numbers is a good way to check on the bearpopulations as a whole.
 #Female bears are shy when they have cubs, though, and can turn aggressive quickly, so it can be hard to find them.
@@ -88,24 +111,24 @@ t.test(sweets,alternative="two.sided",mu=29,conf.level=0.95)
 #Sure, but this is a good way to look at the difference between what is actually true, and what we can tell from our data.
 #We'll start with the following. Let's say the 2013 and 2023 have *identical* distributions for the number of cubs:
 
-cubnum<-c(0,1,2,3,4,5)
-prob<-c(0.3,0.4,0.2,0.05,0.035, 0.015)
+cubnum <- c(0, 1, 2, 3, 4, 5)
+prob <- c(0.3, 0.4, 0.2, 0.05, 0.035, 0.015)
 
 #Here cubnum is the vector of cub number, and prob is the probability mass function for the cubs
 #We can generate samples for the 2013 and 2023 surveys as follows:
 
-survey2013<-sample(cubnum,35,replace=T,prob)
-survey2023<-sample(cubnum,33,replace=T,prob)
+survey2013 <- sample(cubnum, 35, replace = T, prob)
+survey2023 <- sample(cubnum, 33, replace = T, prob)
 
 #We're telling R to sample from the cubnum elements, 35 or 33 times, with replacement, using the probability vector prob.
 #Using replace=T here is very important. If you use replace=F, each element in cubnum can only be used once, which means you'll run out ofvalues and R will sulk!
 
-wrongapproach<-sample(cubnum,35,replace=F,prob)
+wrongapproach <- sample(cubnum, 35, replace = TRUE, prob)
 
 #We'll now take these two samples, and run a two-sample t-test at the 5% significance level to see whether the population means are different.
 #Now, we KNOW the population means are the same, so our null hypothesis will be true. But each time I run this workshop there is a fivepercent probability
 #I'll reject the null hypothesis (which would be a Type I error).
- 
+
 
 #Our null hypothesis is that mu_2013 = mu_2023. Our alternative hypothesis will be that mu_2013 != mu_2023, as we haven't been given a reason to focus on just one tail.
 #Before we can go further, we need to decide which test approach to take. In this example, we not only know the variances are equal, but we could directly compute them
@@ -113,48 +136,48 @@ wrongapproach<-sample(cubnum,35,replace=F,prob)
 
 #Our first step should be to check whether we believe the variances are equal. For that we need Levene's test.
 
-?leveneTest
+? leveneTest
 
 #Disaster! R doesn't have the Levene test!
 
 #At least, it doesn't have it *yet*. We need to load a package which contains it, such as "car".
 
-#We do this by going to "Packages", selecting a mirror (it never seems to make a difference which one you pick), and selecting "car". 
-#This will download the package, which we then add into our library.
+# We do this by going to "Packages", selecting a mirror (it never seems to make a difference which one you pick), and selecting "car".
+# This will download the package, which we then add into our library.
 
 library(car)
 
-?leveneTest
+? leveneTest
 
 #If we want to compare two vectors against each other, this is easily done, once our data is in a data frame
 
-dat2013<-rbind(survey2013,rep(2013,35))
-dat2023<-rbind(survey2023,rep(2023,33))
-bearsdat<-rbind(t(dat2013),t(dat2023))
-bears<-data.frame(bearsdat)
-names(bears)<-c("Cubs","Year")
+dat2013 <- rbind(survey2013, rep(2013, 35))
+dat2023 <- rbind(survey2023, rep(2023, 33))
+bearsdat <- rbind(t(dat2013), t(dat2023))
+bears <- data.frame(bearsdat)
+names(bears) <- c("Cubs", "Year")
 
 #Note my use of the rbind, which join row vectors together (along with matrices of compatible column numbers), and of t() (the transpose function).
 
 #We now use Levene's Test
 
-leveneTest(Cubs~Year,data=bears)
+# leveneTest(Cubs~Year, data=bears)
 
 #Another error! R isn't happy; it thinks the year values are numbers to use in calculations. Easily fixed:
 
-bears$Year<-as.factor(bears$Year)
-leveneTest(Cubs~Year,data=bears)
+bears$Year <- as.factor(bears$Year)
+leveneTest(Cubs ~ Year, data = bears)
 
 #What can we conclude from this p-value?
 
 #We now perform one of two two-sample t-tests. If we concluded the two unknown variances were equal, we can use:
-  
+
 #If we were able to conclude the two unknown variances were equal, we use:
-  
-t.test(survey2013, survey2023, var.equal = TRUE)
+
+Ttrue = t.test(survey2013, survey2023, var.equal = TRUE)
 
 #If we weren't able to conclude the two unknown variances were equal, we use:
 
-t.test(survey2013, survey2023, var.equal = FALSE)
+Tfalse = t.test(survey2013, survey2023, var.equal = FALSE)
 
 #What does the test we have chosen tell us about whether the population mean in 2013 equals that in 2023?
