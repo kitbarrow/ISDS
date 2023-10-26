@@ -18,7 +18,306 @@
 % 
 % 
 % \input{example}
+\section{Recall: Normal Distribution}
+\subsection{Learning Materials}
+\begin{enumerate}
+    \item How reliable are the values found?
+    \item How reliable are the conclusions drawn?
+\end{enumerate}
+\subsection{Learning Objectives}
+\begin{enumerate}
+    \item Define the chi-squared distribution
+    \item Define the T-distribution
+    \item Define the F-distribution
+\end{enumerate}
+% 
+
+\subsection{Recall: The Normal Distribution}
+\begin{itemize}
+    \item Denote by $X \sim N(\mu, \sigma^2)$
+    \item $E(X)=\mu$, $Var(X)=\sigma^2$
+    \item $$ f(X)=\frac{1}{\sigma \sqrt{2 \pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2} $$
+    \item Standard normal:$Z \sim N(0,1)$
+    \item $E(Z)=0$, $Var(Z)=1$
+    \item $$ \frac{X-\mu}{\sigma}=Z \mathbf{, Standardisation}$$
+\end{itemize}
 % 
 % 
+% 
+% 
+% 
+\subsection{Chi-Squared Distribution}
+\paragraph{AKA Chi-square distribution, AKA $\chi^2$ Distribution}
+% 
+% 
+% 
+\begin{itemize}
+    \item Resuqired one parameter,natural number k
+    \item $$ U_k \sim \chi_k^2 $$
+    \item $Z_1$, $Z_2$, $Z_3$,... ,$Z_k$: k independent standard normal random variables
+    \item $$ U_k = \sum_{i=1}^{k}Z_i^2 $$
+\end{itemize}
+% 
+% 
+\subsubsection{The degree of Freedom}
+\paragraph{Conception: The number of independent values available to us when calculate a value}
+\paragraph{For $U_k$ we need k independent values,$Z_1$, $Z_2$, $Z_3$,... ,$Z_k$ hense k degree of freedom}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\subsection{t-Distribution}
+\paragraph{AKA T distribution, AKA stident's t-Distribution}
+% 
+% 
+\begin{itemize}
+    \item Resuqired one parameter, degrees of freedom k
+    \item $$ T_k \sim t_k $$
+    \item $$ T_k = \frac{Z}{\sqrt{\frac{U_k}{k}}} $$
+\end{itemize}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\subsection{F-Distribution}
+% \paragraph{AKA T distribution, AKA stident's t-Distribution}
+% 
+% 
+\begin{itemize}
+    \item Resuqired two parameters, degrees of freedom m and n
+    \item $$ F_{m,n} \sim F_{m,n} $$
+    \item $$ F_{m,n}=\frac{U_m}{U_n} $$
+\end{itemize}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\section{Sample}
+\paragraph{What is the use of a sample?}
+\begin{itemize}
+    \item Can use to calculate statistics.
+    \item Hope those statistics have values close to true parameter of population.
+\end{itemize}
+% 
+% 
+% 
+\subsection{Learning Objectives}
+\begin{enumerate}
+    \item Get familiar with various aproaches to sampling
+    \item Define and make use of sampling distribution
+    \item Exress and make use of the \textbf{Central Limit Theorem}
+\end{enumerate}
+% 
+% 
+% 
+% 
+% 
+\subsection{Why sampling?}
+\subsection{Types of sampling}
+\begin{itemize}
+    \item simple random sampling
+    \item stratified sampling
+    \item cluster sampling
+    \item multistage sampling
+    \item Non-random sampling
+          \begin{itemize}
+              \item Convenience sampling
+              \item Judgement sampling
+              \item Quota sampling
+          \end{itemize}
+\end{itemize}
+% 
+% 
+\subsection{The sampling distribution}
+\paragraph{Function of random variables}
+\begin{itemize}
+    \item If $X_1$, $X_2$,... ,$X_n$ are random variables
+    \item $$ f(X_1, X_2,... ,X_n)=\frac{\sum_{i=1}^{n}X_i}{n}=Y $$
+    \item Y must also be a random variables
+    \item Y must also be the mean value, $\bar{X}$
+    \item The mean of RVs is also an RV
+\end{itemize}
+% 
+% 
+% 
+\paragraph{The distribution of a statistic over repeated samples}
+\begin{itemize}
+    \item proportion $\hat{p}$
+    \item Variance $s^2$
+    \item $$ E(\bar{X})=\mu_{\bar{X}}=\mu $$
+\end{itemize}
+% 
+% 
+% 
+% 
+\subsection{The Central Limit Theorem (CLT)}
+\begin{itemize}
+    \item Let X be any random variables, $E(X)=\mu$, $Var(X)=\sigma^2$
+    \item Collect n realisation of X to get $\bar{x}$
+    \item $$ \mathbf{Set } \bar{X_n}=\sum_{i-1}^{n}\frac{X_i}{n} $$
+\end{itemize}
+% 
+% 
+% 
+% 
+\paragraph{\textbf{Central Limit Theorem: }for a large n, the sampling distribution of $\bar{X_n}$ is approximately $N(\mu, \frac{\sigma^2}{n})$}
+% 
+$$ lim_{n \rightarrow \infty }  \bar{X_n} \sim N(\mu, \frac{\sigma^2}{n})$$
+% 
+% 
+% 
+% 
+\subsubsection{Three points about the CLT}
+\begin{enumerate}
+    \item n should be at least 30
+    \item a sum of normal RVs is a normal RV, A normal RV divided by n is a normal RV \\
+          Each $X_i$ normal $\Rightarrow$ $\bar{X}$ normal \\
+          $\bar{X_n \sim N(\mu, \frac{\sigma^2}{n})}$ true for all value of n
+    \item Cab standardise a  normal RV X
+    \item $$ lim_{n \rightarrow \infty}\bar{X_n} \sim N(\mu,\frac{\sigma^2}{n}) \Rightarrow \lim_{n \rightarrow \infty} \frac{\bar{X_n}-\mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
+\end{enumerate}
+% 
+% 
+% 
+\subsubsection{Infinite Population}
+$$ \sigma_{\bar{X}}^2 = \frac{\sigma^2}{n} \Leftarrow $$
+\paragraph{Makes no difference and ALWAYS TRUE under condition above}
+% 
+% 
+\subsubsection{Finite Population}
+\paragraph{Each value sampled changes nature of remaining unsampled popukation.}
+$$ \sigma_{\bar{x}}^2=\frac{\sigma^2}{n} \times \frac{N-n}{N-1}$$
+\begin{itemize}
+    \item N is size of population
+    \item Finite population
+    \item $\sigma_{\bar{x}}^2$ for finite population with variance $\sigma^2 < \sigma_{\bar{x}}^2$ infinite population with variance $\sigma^2$
+    \item As n increases, $\sigma_{\bar{X}}^2$ gets smaller for same N and $\sigma$
+\end{itemize}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\subsection{Standard Error}
+\subsection{Variance of A Sampling Distribution}
+% 
+% 
+$$ s^2=\frac{1}{n-1} \sum_{i=1}^{n} (x_i-\bar{x})^2 $$
+% 
+% 
+$$ \frac{s^2(n-1)}{\sigma^2} \sim \chi_{n-1}^2 $$
+% 
+% 
+$$ E(s^2) = \frac{\sigma^2}{n-1}E(\chi_{n-1}^2) $$
+% 
+\paragraph{Due to the fact that $E(\chi_k^2)=k$, so $E(s^2)=\sigma^2$}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\section{Estimation}
+% 
+% 
+\subsection{Types of Estimation}
+\begin{itemize}
+    \item Point Estimation
+    \item Interval Estimation
+\end{itemize}
+% 
+% 
+\subsection{Learning Objects}
+\begin{enumerate}
+    \item Explore
+\end{enumerate}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+%
 \end{document}
+% 
 % 
