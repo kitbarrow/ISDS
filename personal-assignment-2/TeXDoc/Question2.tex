@@ -1,0 +1,58 @@
+\section{Question 2}
+\subsection{Find the modal tooth length across the entire data set.}
+\begin{lstlisting}[style=rstyle]
+# clear the console area
+cat("\014")
+
+# clear the environment var area
+rm(list = ls())
+
+# Load the Tooth Growth data set
+data(ToothGrowth)
+
+# Find the modal tooth length
+modal_tooth_lengt = as.numeric(names(sort(
+    table(ToothGrowth$len), decreasing = TRUE)[1]))
+\end{lstlisting}
+% \paragraph{Output: modal_tooth_lengt}
+\paragraph{Env Output: $modal\_tooth\_length=26.4$}
+\subsection{Mean tooth length for guinea pigs who were given their vitamins via orange juice}
+% 
+\begin{lstlisting}[style=rstyle]
+# Calculate the mean tooth length for guinea pigs 
+# given vitamins via orange juice
+mean_tooth_length_orange = mean(
+    ToothGrowth$len[ToothGrowth$supp == "OJ"])
+# mean_tooth_length_orange    
+\end{lstlisting}
+\paragraph{Env Output: $mean\_tooth\_length\_orange=20.66333$}
+% 
+\subsection{Create a side-by-side box-and-whisker plot:}
+% 
+\begin{lstlisting}[style=rstyle]
+# Create a side-by-side box-and-whisker plot
+# for tooth length by supplement type
+boxplot(len ~ supp, data = ToothGrowth, 
+        col = c("lightblue", "lightgreen"),
+        xlab = "Supplement Type", ylab = "Tooth Length",
+        main = "Tooth Length by Supplement Type")
+\end{lstlisting}
+% 
+% 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ToothLength.pdf}
+    % \caption{}
+    % \label{fig:your-label}
+\end{figure}
+% 
+% 
+\subsection{Comment on which vitamin delivery approach is more effective:}
+\paragraph{\textbf{Analytics}}
+\begin{itemize}
+    \item OJ has a higher \textbf{Median Value} than VC.
+    \item OJ data is basically normally distributed, while VC is skewed.
+    \item The upper and lower \textbf{quartiles} of VC's span longer distances, so the data is more dispersed.
+    \item \textbf{The length of the box:} I don't think there's much difference between the two, and the degree of centralization in the data set is basically the same.
+\end{itemize}
+\paragraph{\textbf{Conclusion} I think OJ supplement is more effective.}
