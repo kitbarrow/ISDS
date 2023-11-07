@@ -1,36 +1,68 @@
 \section{Question 3}
-\subsection{Expected number of party poppers}
-$$ E(X)=Probability\ of\ failure * Total\ number\ of\ party\ poppers $$
-$$ E(X)=0.6\% *200=1.2 $$
-% 
-\subsection{Distribution of fail poppers}
-\subsubsection{Poisson Distribution and Binomial Distribution}
-\paragraph{I don't know if the condition provided in the first question (200 in a box) holds true in the second question, so I think both the binomial distribution and the Poisson distribution can describe the probability of this problem.}
-% 
-\paragraph{\textbf{Poisson Distribution: }$X \sim Poisson(\lambda)$,
-    $\lambda=0.6\%*n$}
-\paragraph{\textbf{Binomial Distribution: }$X \sim B(n,p)$, $p=0.006$}
 % 
 % 
-\subsubsection{The assumptions that need to hold for justifying the use of the Poisson and Binomial distribution}
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+\subsection{Hypothesis Test for Seasonal Differences in Beaver Body Temperature}
+% 
+% 
+% 
 \begin{itemize}
-    \item Events (party poppers failing to go off) occur randomly (only for Poison).
-    \item Events are rare, meaning the probability of more than one event occurring in a very short time period is negligible (only for Poison).
-    \item Events are independent of each other.
+    \item The null hypothesis ($H_0$): There is no difference in mean internal body temperature of beavers between November and December.
+    \item The alternative hypothesis ($H_1$): Beavers have a lower mean internal body temperature in December than in November. ($H_1$ is complementary to $H_0$).
 \end{itemize}
 % 
+\paragraph{I apply a one-tailed t-test since we are specifically interested in whether the mean temperature in December is lower.}
+\paragraph{Because we are interested in whether the body temperature in December is lower than in November, this is a directional testing question.}
 % 
 % 
-\subsection{Distribution of mistake box}
-\subsubsection{Distribution for Y}
-\paragraph{For the random variable Y, representing the number of party poppers that fail to go off in a box of 2 (due to the administrative error), we can still use the Poisson or Binomial distribution with the same $\lambda \text{ (Poison)}=n*p \text{ (Binomial)}=0.012$ value as calculated in Question 3.1, which is based on the company's claim.}
+% 
+$$$$
+% 
+\begin{lstlisting}[style=rstyle]
+# clear the console area
+cat("\014")
+# clear the environment var area
+rm(list = ls())
 
-\subsubsection{$E(Y)$ and $Var(Y)$}
-\paragraph{According to Poisson Distribution, PMF is:}
-$$ P(Y=k)=\frac{e^{- \lambda} \lambda^k}{k!} $$
-$$ E(Y)= \lambda =0.012 $$
-$$ Var(Y) = \lambda=0.012 $$
-\paragraph{According to Binomial Distribution, PMF is:}
-$$ P(Y=k)= \binom{n}{k} p^k (1 - p)^{n - k}$$
-$$ E(Y)= n*p =0.012 $$
-$$ Var(Y) =n*p*(1-p)=0.01193 $$
+# Load the datasets
+beaver1
+beaver2
+
+# Define the significance level
+alpha <- 0.05
+
+# Perform the t-test for independent samples
+t_test <- t.test(beaver2$temp, beaver1$temp, alternative = "less", var.equal = TRUE)
+
+# The value of the test statistic
+t_value <- t_test$statistic
+
+# A bound on the p-value for the test
+p_value_bound <- t_test$p.value
+
+# Print the test statistic and the bound on the p-value
+print(t_value)
+print(p_value_bound)
+
+# Conclusion
+if (p_value_bound < alpha) {
+    cat("Conclusion: Reject the null hypothesis. There is evidence to suggest that beavers have a lower mean internal body temperature in December than in November.")
+} else {
+    cat("Conclusion: Fail to reject the null hypothesis. There is not sufficient evidence to suggest that beavers have a lower mean internal body temperature in December than in November.")
+}
+
+\end{lstlisting}
+% 
+% 
+\paragraph{\textbf{Output:}}
+\begin{itemize}
+    \item The test statistic is \textbf{-15.235 }.
+    \item A bound on the p-value for the test is \textbf{4.224052e-31}.
+    \item \textbf{Conclusion:} Reject the null hypothesis. There is evidence to suggest that beavers have a lower mean internal body temperature in December than in November.
+\end{itemize}
