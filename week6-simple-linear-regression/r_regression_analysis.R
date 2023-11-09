@@ -10,7 +10,7 @@ graphics.off()
 data(faithful) 
 
 # use boxplot to see if exists error data
-par(mfrow = c(1,2))
+# par(mfrow = c(1,2))
 boxplot(faithful$eruptions, main="Eruptions")
 boxplot(faithful$waiting, main="Waiting")
 
@@ -60,20 +60,49 @@ coefficients_vector <- coef(model)
 cat("Coefficients Vector:", coefficients_vector, "\n")
 
 # -----------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------
-
+# Extract residuals from the model
+residuals_vector <- residuals(model)
+# Compute sum of squares of the residuals
+lsq_Q <- sum(residuals_vector^2)
+cat("Sum of Squares of Residuals (lsq.Q):", lsq_Q, "\n")
 
 # -----------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------
-
+summ = summary(model)
 
 # -----------------------------------------------------------------------------
+# Get summary of the linear regression model
 
+# Extract coefficient estimates
+coefficients_estimates <- coef(summ)
 
+# Extract residual standard error
+residual_standard_error <- summ$sigma
+
+# Extract coefficient of determination (R^2)
+r_squared <- summ$r.squared
+
+# Print the results
+cat("Coefficient Estimates:\n", coefficients_estimates, "\n")
+cat("Residual Standard Error:", residual_standard_error, "\n")
+cat("Coefficient of Determination (R^2):", r_squared, "\n")
+
+# -----------------------------------------------------------------------------
+plot(model)
+# -----------------------------------------------------------------------------
+# Residuals vs Fitted
+# 
+# -----------------------------------------------------------------------------
+# Q-Q Residuals
+# 
+# -----------------------------------------------------------------------------
+# Scale-location
+# Observe that the square root of the normalized residuals in the 
+# Scale-Location graph keeps a horizontal distribution as the fitting value 
+# increases. If a horizontal distribution is presented in the graph, it 
+# indicates that the same variance may be satisfied.
+# -----------------------------------------------------------------------------
+# 
+# -----------------------------------------------------------------------------
+# 
+# -----------------------------------------------------------------------------
+# 
