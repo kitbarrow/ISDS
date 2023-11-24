@@ -1,3 +1,4 @@
+library(mice)
 # -----------------------------------------------------------------------------
 # clear the console area
 cat("\014")
@@ -9,8 +10,19 @@ graphics.off()
 # current_directory
 current_directory <- getwd()
 # read_csv
-# 拼接文件路径
-file_path <- file.path(current_directory, "Happy.csv")
-data <- read.csv(file_path)
+# joint file path
+file_path <- file.path(current_directory, "Happyedt.csv")
+Happy <- read.csv(file_path)
 # show data
-head(data)
+head(Happy)
+
+# -----------------------------------------------------------------------------
+Continent_mapping <- c("North America" = 1, "South America" = 2, "Europe" = 3, "Asia" = 4, "Africa" = 5, "Oceania" = 6)
+Continent_mapping
+# Use the mapping to create a new column with numeric v
+alues
+Happy$numeric_continent <- Continent_mapping[Happy$Continent]
+# -----------------------------------------------------------------------------
+Happy$Continent<-NULL
+Happy$Country.name<-NULL
+# -----------------------------------------------------------------------------
