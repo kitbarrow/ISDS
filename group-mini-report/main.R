@@ -13,16 +13,26 @@ current_directory <- getwd()
 # joint file path
 file_path <- file.path(current_directory, "Happyedt.csv")
 Happy <- read.csv(file_path)
-# show data
-head(Happy)
-
 # -----------------------------------------------------------------------------
-Continent_mapping <- c("North America" = 1, "South America" = 2, "Europe" = 3, "Asia" = 4, "Africa" = 5, "Oceania" = 6)
+# show data0
+head(Happy)
+# -----------------------------------------------------------------------------
+Happy <- mice(Happy)
+Happy <- complete(Happy)
+head(Happy)
+# -----------------------------------------------------------------------------
+Continent_mapping <-
+  c(
+    "North America" = 1,
+    "South America" = 2,
+    "Europe" = 3,
+    "Asia" = 4,
+    "Africa" = 5,
+    "Oceania" = 6
+  )
 Continent_mapping
-# Use the mapping to create a new column with numeric v
-alues
 Happy$numeric_continent <- Continent_mapping[Happy$Continent]
 # -----------------------------------------------------------------------------
-Happy$Continent<-NULL
-Happy$Country.name<-NULL
+Happy$Continent <- NULL
+Happy$Country.name <- NULL
 # -----------------------------------------------------------------------------

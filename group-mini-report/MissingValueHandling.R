@@ -13,7 +13,7 @@ file_path <- file.path(current_directory, "Happyedt.csv")
 Happy <- read.csv(file_path)
 # -----------------------------------------------------------------------------
 mean(Happy$HLE)
-
+# -----------------------------------------------------------------------------
 imputed_data <- mice(Happy)
 completed_data <- complete(imputed_data)
 head(completed_data)
