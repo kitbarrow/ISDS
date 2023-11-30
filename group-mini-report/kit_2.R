@@ -8,7 +8,7 @@ rm(list = ls())
 graphics.off()
 #sets the working directory
 
-install.packages("plyr")
+# install.packages("plyr")
 
 ## Load the durhamSLR package
 library(durhamSLR)
@@ -56,6 +56,7 @@ Happy2
 #Remove country names and continent names as these will confuse R
 Happy2$Continent <- NULL
 Happy2$Country.name <- NULL
+
 Happy2
 
 
@@ -183,7 +184,7 @@ general_cv = function(X, y, fold_ind, fold_error_function) {
 (test_MSE = general_cv(Happy2[, 1:p], Happy2[, p + 1], fold_index, reg_fold_error))
 
 
-install.packages('leaps')
+# install.packages('leaps')
 library(leaps)
 
 ## Apply the best subset selection algorithm
