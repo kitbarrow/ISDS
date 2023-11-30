@@ -15,6 +15,7 @@
 # install necessary R packages
 # install.packages('leaps')
 # install.packages("plyr")
+# install.packages("bestglm")
 # -----------------------------------------------------------------------------
 # clear the environment var area
 rm(list = ls())
@@ -132,8 +133,127 @@ fitted_values = predict(lsq_fit, Happy_general)
 # -----------------------------------------------------------------------------
 # Best Subset Selection
 library(leaps)
+p =  5
 bss_fit = regsubsets(Ladder_score ~ .,
                      data = Happy_general,
                      method = "exhaustive",
-                     nvmax = 5)
+                     nvmax = p)
 (bss_summary = summary(bss_fit))
+# -----------------------------------------------------------------------------
+#
+#
+#
+#
+#
+# -----------------------------------------------------------------------------
+reg_fold_error = function(X, y, test_data) {
+  Xy = data.frame(X, y=y)
+  ## Fit the model to the training data
+  if(ncol(Xy)>1) tmp_fit = lm(y ~ ., data=Xy[!test_data,])
+  else tmp_fit = lm(y ~ 1, data=Xy[!test_data,,drop=FALSE])
+  ## Generate predictions over the test data
+  yhat = predict(tmp_fit, Xy[test_data,,drop=FALSE])
+  yobs = y[test_data]
+  ## Compute the test MSE
+  test_error = mean((yobs - yhat)^2)
+  return(test_error)
+}
+# -----------------------------------------------------------------------------
+reg_bss_cv = function(X, y, fold_ind) {
+  p = ncol(X)
+  Xy = cbind(X, y = y)
+  nfolds = max(fold_ind)
+  if (!all.equal(sort(unique(fold_ind)), 1:nfolds))
+    stop("Invalid fold partition.")
+  fold_errors = matrix(NA, nfolds, p)
+  for (fold in 1:nfolds) {
+    # Using all *but* the fold as training data, find the best-fitting models with 1, ..., p
+    # predictors, i.e. M_1, ..., M_p
+    tmp_fit = regsubsets(y ~ .,
+                         data = Xy[fold_ind != fold,],
+                         method = "exhaustive",
+                         nvmax = p)
+    best_models = summary(tmp_fit)$which[, 2:(1 + p)]
+    # Using the fold as test data, find the test error associated with each of M_1,..., M_p
+    for (k in 1:p) {
+      fold_errors[fold, k] = reg_fold_error(X[, best_models[k,]], y, fold_ind ==
+                                              fold)
+    }
+  }
+  # Find the fold sizes
+  fold_sizes = numeric(nfolds)
+  for (fold in 1:nfolds)
+    fold_sizes[fold] = length(which(fold_ind == fold))
+  # For each of M_0, M_1, ..., M_p, compute the average test error across folds
+  test_errors = numeric(p)
+  for (k in 1:p) {
+    test_errors[k] = weighted.mean(fold_errors[, k], w = fold_sizes)
+  }
+  # Return the test error for models M_1, ..., M_p
+  return(test_errors)
+}
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# Load the bestglm package
+library(bestglm)
+# Create multi-panel plotting device
+par(mfrow = c(2, 2))
+# Produce plots, highlighting optimal value of k
+(best_adjr2 = which.max(bss_summary$adjr2))
+(best_cp = which.min(bss_summary$cp))
+(best_bic = which.min(bss_summary$bic))
+k = 5
+n = nrow(Happy_general)
+fold_index = sample(k,n,replace=TRUE)
+## Apply the function to the Happy data
+bss_mse = reg_bss_cv(Happy_general[, 1:5], Happy_general[, 6], fold_index)
+## Identify model with the lowest error
+(best_cv = which.min(bss_mse))
+
+plot(
+  1:p,
+  bss_summary$adjr2,
+  xlab = "Number of predictors",
+  ylab = "Adjusted Rsq",
+  type = "b"
+)
+points(best_adjr2,
+       bss_summary$adjr2[best_adjr2],
+       col = "red",
+       pch = 16)
+plot(1:p,
+     bss_summary$cp,
+     xlab = "Number of predictors",
+     ylab = "Cp",
+     type = "b")
+points(best_cp, bss_summary$cp[best_cp], col = "red", pch = 16)
+plot(1:p,
+     bss_summary$bic,
+     xlab = "Number of predictors",
+     ylab = "BIC",
+     type = "b")
+points(best_bic,
+       bss_summary$bic[best_bic],
+       col = "red",
+       pch = 16)
+plot(1:p,
+     bss_mse,
+     xlab = "Number of predictors",
+     ylab = "10-fold CV Error",
+     type = "b")
+points(best_cv, bss_mse[best_cv], col = "red", pch = 16)

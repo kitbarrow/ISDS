@@ -325,6 +325,7 @@ plot(1:p,
      type = "b")
 points(best_cv, bss_mse[best_cv], col = "red", pch = 16)
 
+
 ##Sample 8-fold matrices
 
 ## Create matrix to store the fold assignments:
