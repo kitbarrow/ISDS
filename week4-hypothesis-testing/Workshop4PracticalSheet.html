@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Workshop 4 Practical Sheet</title>
+  <style>
+    body {
+      counter-reset: a b
+    }
+  
+  
+    /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+    html {
+      line-height: 1.1;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%
+    }
+  
+    body {
+      margin: 2em
+    }
+  
+    h1 {
+      font-size: 2em;
+      margin: .67em 0
+    }
+  
+    hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible
+    }
+  
+    main {
+      display: block
+    }
+  
+    code { background-color: #eee; }
+  
+    pre {
+      font-family: monospace, monospace;
+      font-size: 1em
+    }
+  
+    pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+  }
+  
+    a {
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects
+    }
+  
+    b,
+    strong {
+      font-weight: inherit;
+      font-weight: bolder
+    }
+  
+    body,
+    html {
+      color: rgba(0, 0, 0, .75);
+      font-size: 16px;
+      font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+      font-variant-ligatures: common-ligatures;
+      line-height: 1.67;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+  
+    dl,
+    ol,
+    p,
+    ul {
+      margin: 1.2em 0
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 1.8em 0;
+      line-height: 1.33
+    }
+  
+    h1:after,
+    h2:after {
+      content: "";
+      display: block;
+      position: relative;
+      top: .33em;
+      border-bottom: 1px solid hsla(0, 0%, 50%, .33)
+    }
+  
+    ol ol,
+    ol ul,
+    ul ol,
+    ul ul {
+      margin: 0
+    }
+  
+    dt {
+      font-weight: 700
+    }
+  
+    a {
+      color: #0c93e4;
+      text-decoration: underline;
+      text-decoration-skip: ink
+    }
+  
+    a:focus,
+    a:hover {
+      text-decoration: none
+    }
+  
+  
+    hr {
+      border: 0;
+      border-top: 1px solid hsla(0, 0%, 50%, .33);
+      margin: 2em 0
+    }
+  
+  
+    table {
+      background-color: transparent;
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+  
+    td,
+    th {
+      border-right: 1px solid #626262;
+      border-left: 1px solid #626262;
+      padding: 8px 12px
+    }
+  
+  
+    td {
+      border-top: 1px solid #626262
+    }
+  
+  
+     .page-break-after {
+      page-break-after: always
+    }
+  
+  
+  
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1>Workshop 4 Practical Sheet</h1>
+
+<p>In this document, we’ll focus on using <code>R</code> to run
+hypothesis tests.</p>
+<p>You will struggle to complete all these questions in the workshop if
+you try to do them all on your own. Instead, find some way to split the
+questions between the members of your group. By the end of Week 4, make
+sure each member of your group has access to the solutions to every
+question attempted by the group. How you go about doing this within your
+group is up to you. Remember that the deadline for your first
+groupwork-based individual assignment is <strong>noon Monday 30th
+October</strong>, and that the assignment requires you reflect on how
+you contributed to this week and last week’s groupwork within the
+workshops.</p>
+<p><strong>Part 1: One Sample Tests</strong></p>
+<p>In this section, we will focus on hypothesis tests performed on a
+single sample (this will include paired hypothesis tests, which as you
+saw in Video 4.6 can be reduced to a single hypothesis test).</p>
+<p>These questions are all similar to the one I went through at the
+beginning of the workshop, so you might find it useful to take a look at
+the code I made use of when answering them.</p>
+<ol>
+<li><p>Every morning and evening, our dog Quiz is taken for a walk. A
+dog of his breed should get two 45 minute walks a day. Over six days, I
+measure how far Quiz walks while out on his two walks, leading to the
+following values in minutes:</p>
+<p>45.6, 41.8, 46.4, 41.7, 44.0, 44.6, 46.8, 42.9, 45.1, 45.7, 45.1,
+41.6.</p>
+<p>Note that these times are in decimal values, not in minutes and
+seconds.</p>
+<ol>
+<li><p>Use a Q-Q plot and the Shapiro-Wilk test to check whether this
+data can be considered as normally distributed.</p></li>
+<li><p>Making the assumption that this data can indeed be considered
+normally distributed, find the test statistic for a hypothesis test with
+<em>H</em><sub>0</sub> : <em>μ</em> = 45.</p></li>
+<li><p>I want the average walk length to be 45 minutes - longer than
+that and Quiz gets too tired, shorter than that and Quiz has too much
+energy at the end of the day. Describe an appropriate alternative
+hypothesis for this situation.</p></li>
+<li><p>Find the critical value for the hypothesis test with the
+alternative hypothesis you identified in part (c), and use it to decide
+whether <em>H</em><sub>0</sub> can be rejected here.</p></li>
+</ol></li>
+<li><p>The <code>faithful</code> data, already available in
+<code>R</code>, contains two variables. Both relate to Old Faithful, a
+geyser in Yellowstone National Park, Wyoming, USA. The geyser erupts
+every 45 to 120 minutes, throwing thousands of gallons of water into the
+air, and is a very popular tourist attraction.</p>
+<p>The variable <code>eruptions</code> gives the length in minutes of
+272 minutes. The variable <code>waiting</code> gives the length in
+minutes of 272 gaps between eruptions.</p>
+<ol>
+<li><p>Calculate directly the test statistic for a hypothesis test,
+using the t-distribution, to test the null hypothesis that the average
+duration of an eruption is 3.5 minutes.</p></li>
+<li><p>For alternative hypothesis
+<em>H</em><sub>1</sub> : <em>μ</em> &lt; 3.5, find the p-value for this
+test statistic, using the t-distribution.</p></li>
+<li><p>Hence state whether <em>H</em><sub>0</sub> can be rejected at the
+5% level.</p></li>
+<li><p>State which form of tailed test
+<em>H</em><sub>1</sub> : <em>μ</em> &lt; 3.5 represents. Give a reason
+why we might want to apply this form of tailed test in the context of
+Old Faithful eruption times.</p></li>
+<li><p>Redo questions a) to c) using a standard normal distribution
+instead of a t-distribution. What do you notice about the changes in
+values?</p></li>
+</ol></li>
+<li><p>Geologists have theorised that waiting times for Old Faithful
+follow a simple pattern - a short waiting time follows a long waiting
+time, which follows another short waiting time, and so on.</p>
+<p>We can investigate this using the <code>faithful</code> data once
+again. We can divide the waiting times into two sets, representing odd
+eruptions and even eruptions within the data. The fact the
+<code>faithful</code> data is in chronological order means we can pair
+this data, with each odd eruption time paired with the even eruption
+time that followed it.</p>
+<ol>
+<li><p>Create two vectors <code>faithfulodd</code> and
+<code>faithfuleven</code>, which contain all odd numbered waiting times
+and even numbered waiting times, respectively. (<strong>Hint:</strong>
+try using the function <code>seq</code> to generate all odd numbers
+between 1 and 271, and all even numbers between 2 and 272.)</p></li>
+<li><p>We can check the geologists’ theory by running a hypothesis test,
+with the null hypothesis being that there exists no difference between
+the average odd-numbered waiting period, and the average even-numbered
+waiting period. Give a brief explanation of how this can be done using
+<code>faithfulodd</code> and <code>faithfuleven</code>, including a
+description of the relevant null hypothesis.</p></li>
+<li><p>Run a t-test at the 1% significance level, with a two-tailed
+alternative hypothesis, in order to test the null hypothesis you gave in
+(a). Is that null hypothesis rejected?</p></li>
+</ol></li>
+</ol>
+<p><strong>Part 2: Two Sample Tests</strong></p>
+<p>In this section, we will focus on hypothesis tests performed on a two
+samples, which are not paired.</p>
+<p>These questions are all similar to the one I went through at the
+beginning of the second half of the workshop, so you might find it
+useful to take a look at the code I made use of when answering them. In
+fact, Question 1 follows directly from that code.</p>
+<ol>
+<li><p>Try re-running the polar bear example I demonstrated multiple
+times, using different distributions for at least one of the 2013 and
+2023 data. Try to use distributions which have a different variance to
+each other. Roughly how different do the population variances have to be
+before the Levene’s test starts rejecting the null hypothesis that they
+are equal? In such cases, how different are the results from the pooled
+t-test (which would be inappropriate in such an instance) and the
+unpooled t-test (which is the appropriate choice in such an
+instance)?</p>
+<p>(<strong>Hint</strong>: You can find the mean and variance for a
+discrete distribution <code>prob</code> relating to possible values
+<code>cubnum</code> with the following code:</p>
+
+<pre>
+<code>meanvalue<-cubnum%*%prob
+varvalue<-(cubnum**2)%*%prob-meanvalue**2</code>
+</pre>
+<p>Why not see if you can figure out why this code works, as an
+exercise?)</p></li>
+<li><p>This question uses the <code>Guyer</code> data set, which is
+available after loading the <code>car</code> package into your library.
+The Guyer data comes from an experiment in cooperation. 30 teams of 4
+people played the “Prisoner’s Dilemma”. The details of this game are
+very interesting, and I recommend looking them up. For this question,
+though, what matters is that each player can choose to either cooperate,
+or not to cooperate. Cooperation gets you a better outcome if other
+people co-operate as well, but a worse outcome if other people do not
+cooperate.</p>
+<p>In this experiment, each player played 30 times, leading to 120
+choices per group as to whether or not to cooperate. Some groups made
+their choices anonymously, others had to make their decisions
+publicly.</p>
+<ol>
+<li><p>Test at the 10% significance level the null hypothesis that men
+are equally likely to cooperate as women, against the alternative
+hypothesis that they are not.</p></li>
+<li><p>Test at the 10% significance level the null hypothesis that
+people are equally likely to cooperate if their decisions are anonymous
+as if they are made publicly, against the alternative hypothesis that
+people are less likely to cooperate if their decisions are anonymous as
+if they are made publicly.</p></li>
+</ol>
+<p>In both cases note that if a Levene’s test does not allow you to
+assume sample variances are equal, the small number of values here means
+a normal test needs to be passed for each set of sample values before we
+apply an unpooled t-test.</p></li>
+</ol>
+</body>
+</html>

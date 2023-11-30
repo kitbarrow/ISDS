@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Workshop 3 Problems Sheet Solutions</title>
+  <style>
+	body {
+		counter-reset: a b
+	}
+
+
+	/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+	html {
+		line-height: 1.1;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%
+	}
+
+	body {
+		margin: 2em
+	}
+
+	h1 {
+		font-size: 2em;
+		margin: .67em 0
+	}
+
+	hr {
+		box-sizing: content-box;
+		height: 0;
+		overflow: visible
+	}
+
+	main {
+		display: block
+	}
+
+	code { background-color: #eee; }
+
+	pre {
+		font-family: monospace, monospace;
+		font-size: 1em
+	}
+
+	pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
+
+	a {
+		background-color: transparent;
+		-webkit-text-decoration-skip: objects
+	}
+
+	b,
+	strong {
+		font-weight: inherit;
+		font-weight: bolder
+	}
+
+	body,
+	html {
+		color: rgba(0, 0, 0, .75);
+		font-size: 16px;
+		font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+		font-variant-ligatures: common-ligatures;
+		line-height: 1.67;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale
+	}
+
+	dl,
+	ol,
+	p,
+	ul {
+		margin: 1.2em 0
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 1.8em 0;
+		line-height: 1.33
+	}
+
+	h1:after,
+	h2:after {
+		content: "";
+		display: block;
+		position: relative;
+		top: .33em;
+		border-bottom: 1px solid hsla(0, 0%, 50%, .33)
+	}
+
+	ol ol,
+	ol ul,
+	ul ol,
+	ul ul {
+		margin: 0
+	}
+
+	dt {
+		font-weight: 700
+	}
+
+	a {
+		color: #0c93e4;
+		text-decoration: underline;
+		text-decoration-skip: ink
+	}
+
+	a:focus,
+	a:hover {
+		text-decoration: none
+	}
+
+
+	hr {
+		border: 0;
+		border-top: 1px solid hsla(0, 0%, 50%, .33);
+		margin: 2em 0
+	}
+
+
+	table {
+		background-color: transparent;
+		border-collapse: collapse;
+		border-spacing: 0
+	}
+
+	td,
+	th {
+		border-right: 1px solid #626262;
+		border-left: 1px solid #626262;
+		padding: 8px 12px
+	}
+
+
+	td {
+		border-top: 1px solid #626262
+	}
+
+
+   .page-break-after {
+		page-break-after: always
+	}
+
+
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Workshop 3 Problems Sheet Solutions</h1>
+</header>
+<ol>
+<li><p>Consider the sample space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1, 2, 3, 4, 5, 6, 7, 8, 9\}</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A = \{2, 4, 6, 8\}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B = \{3, 6, 9\}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">C = \{2, 3, 5, 7\}</annotation></semantics></math>.
+Assuming that all outcomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">1,\ldots,9</annotation></semantics></math>
+are equally likely, write down the sets for the following outcomes and
+calculate their probabilities.</p>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is the event
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>6</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{6\}</annotation></semantics></math>,
+which has probability 1/9.</strong></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is the event
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2, 3, 4, 5, 6, 7, 8\}</annotation></semantics></math>,
+which has probability 7/9.</strong></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>C</mi></msup><annotation encoding="application/x-tex">A^C</annotation></semantics></math>
+(the complement of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>).
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>C</mi></msup><annotation encoding="application/x-tex">A^C</annotation></semantics></math>
+is the event
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1, 3, 5, 7, 9\}</annotation></semantics></math>,
+which has probability 5/9.</strong></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+but not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+but not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is the event
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>6</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{6, 9\}</annotation></semantics></math>,
+which has probability 2/9.</strong></p></li>
+</ol>
+<p>Next, answer the following questions.</p>
+<ol>
+<li><p>What are the probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(A|C)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(A|B)</annotation></semantics></math>?</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">P(A|C) = P (A \textrm{ AND } C )/P (C ) = (1/9)/(4/9) = 1/4</annotation></semantics></math>.</strong></p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">P(A|B) = P (A \textrm{ AND } B )/P (B) = (1/9)/(3/9) = 1/3</annotation></semantics></math>.</strong></p></li>
+<li><p>Which pairs of A, B,C are independent?</p>
+<p><strong>We answer this by attempting to apply the multiplication
+rule, and seeing if it works. Firstly,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>4</mn><mi>/</mi><mn>27</mn></mrow><annotation encoding="application/x-tex">P(A)P (B ) = (4/9)(3/9) = 4/27</annotation></semantics></math>,
+but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">P (A \textrm{ AND } B ) = 1/9</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are not independent. Similarly,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>16</mn><mi>/</mi><mn>81</mn></mrow><annotation encoding="application/x-tex">P (A)P (C ) = (4/9)(4/9) = 16/81</annotation></semantics></math>,
+but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">P (A \textrm{ AND } C ) = 1/9</annotation></semantics></math>,so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+are not indepndent. Finally,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>4</mn><mi>/</mi><mn>27</mn></mrow><annotation encoding="application/x-tex">P (B )P (C ) = (3/9)(4/9) = 4/27</annotation></semantics></math>,
+but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">P (B and C ) = 1/9</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+are also not independent.</strong></p></li>
+</ol></li>
+<li><p>A traffic calming taskforce set up a speed camera at the entrance
+to local village Esh Losing. The speed limit at this point is 30mph.</p>
+<p>After a month of measuring, the taskforce conclude that the speed of
+cars entering Esh Losing is distributed normally, with a mean of 33mph
+and a standard deviation of 2.8mph.</p>
+<p>A speed camera is then set up in secret outside Esh Losing. The
+camera takes a photo of the registration plate of any car travelling at
+more than 35mph as they enter the village, and a ticket is issued to the
+registered owner.</p>
+<ol>
+<li><p>What is the probability a car entering Esh Losing gets a ticket
+issued?</p>
+<p><strong>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>33</mn><mo>,</mo><msup><mn>2.8</mn><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X\sim N(33,2.8^2)</annotation></semantics></math>
+represent the random speed of a car. We can answer this question by
+performing standardisation. We have</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>X</mi><mo>−</mo><mn>33</mn></mrow><mn>2.8</mn></mfrac><mo>&gt;</mo><mfrac><mrow><mn>35</mn><mo>−</mo><mn>33</mn></mrow><mn>2.8</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>&gt;</mo><mn>0.714</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.238</mn><mo>,</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(X&gt;35)&amp;=&amp;P\left(\frac{X-33}{2.8}&gt;\frac{35-33}{2.8}\right)
+\\&amp;=&amp;P\left(z&gt;0.714\right)\\
+&amp;=&amp;0.238,
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>where the last equality comes from looking up the probability
+a standard normal realisation is more than 0.714.</strong></p></li>
+<li><p>A ticket is issued to a car’s owner. What is the probability that
+the car was detected as travelling at more than 40mph?</p>
+<p><strong>We can answer this question by applying the definition of
+conditional probability to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="false" form="prefix">|</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(X&gt;40|X&gt;35)</annotation></semantics></math>:</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="false" form="prefix">|</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(X&gt;40|X&gt;35)&amp;=&amp;\frac{P(X&gt;40 \textrm{ AND } X&gt;35)}{P(X&gt;35)}\\
+&amp;=&amp;\frac{P(X&gt;40)}{P(X&gt;35)},
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>since a car going at over 40mph must also be going over
+35mph.</strong></p>
+<p><strong>we already know the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(X&gt;35)</annotation></semantics></math>.</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>X</mi><mo>−</mo><mn>33</mn></mrow><mn>2.8</mn></mfrac><mo>&gt;</mo><mfrac><mrow><mn>40</mn><mo>−</mo><mn>33</mn></mrow><mn>2.8</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>&gt;</mo><mn>2.50</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.006</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(X&gt;40)&amp;=&amp;P\left(\frac{X-33}{2.8}&gt;\frac{40-33}{2.8}\right)
+\\&amp;=&amp;P\left(z&gt;2.50\right)\\
+&amp;=&amp;0.006.
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>Hence</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="false" form="prefix">|</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>40</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>&gt;</mo><mn>35</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mn>0.006</mn><mn>0.238</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.025</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(X&gt;40|X&gt;35)&amp;=&amp;\frac{P(X&gt;40)}{P(X&gt;35)}\\
+&amp;=&amp;\frac{0.006}{0.238}\\
+&amp;=&amp;0.025.
+\end{aligned}</annotation></semantics></math></strong></p></li>
+</ol></li>
+<li><p>Every week day, when I get up, I make breakfast for my dog Quiz
+(pictured). Quiz’s breakfast is supposed to be 80g of biscuits and 150g
+of meat, but I’m a bit haphazard with my measures.</p>
+
+<img src="https://blackboard.durham.ac.uk/bbcswebdav/courses/MATH42715_2023/Images/Quiz.jpg" alt="Quiz the dog" style="max-width:50%">
+
+<p>Assume the average amount of biscuits I give Quiz for breakfast is
+80g, with a standard deviation of 5g. Assume the average weight of meat
+I give Quiz for breakfast is 150g, with a standard deviation of 8g.
+Assume the amount of biscuits and the weight of meat are independent to
+each other, and that each day’s amounts are independent of any other
+day.</p>
+<ol>
+<li><p>What is the mean and standard deviation of the total weight of
+Quiz’s daily breakfast?</p>
+<p><strong>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+be the random variable representing how many biscuits Quiz gets on a
+weekday morning, in grammes. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+be the random variable representing how much meat Quiz gets on a weekday
+morning, also in grammes. We are told we can assume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+are independent.</strong></p>
+<p><strong>We know
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(X+Y)=E(X)+E(Y)</annotation></semantics></math>
+is always true, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\textrm{Var}(X+Y)=\textrm{Var}(X)+\textrm{Var}(Y)</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+are independent, as they are here. We also have that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><mo>=</mo><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sqrt{\textrm{Var}(X+Y)}=\textrm{SD}(X+Y)</annotation></semantics></math></strong>
+<strong>Combining all this gives us</strong>
+<strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>230</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><msqrt><mrow><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><mo>=</mo><msqrt><mrow><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><msqrt><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>+</mo><msup><mn>5</mn><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mn>9.434</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+E(X+Y)&amp;=&amp;E(X)+E(Y)=230\\
+\textrm{SD}(X+Y)&amp;=&amp;\sqrt{\textrm{Var}(X+Y)}=\sqrt{\textrm{Var}(X)+\textrm{Var}(Y)}\\ &amp;=&amp;\sqrt{8^2+5^2}=9.434
+\end{aligned}</annotation></semantics></math></strong></p></li>
+<li><p>What is the mean and standard deviation of the total weight of
+Quiz’s breakfast over five week days?</p>
+<p><strong>We now simply find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(5X+5Y)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\textrm{SD}(5X+5Y)</annotation></semantics></math></strong>
+<strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>5</mn><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1150</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>5</mn><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>47.17</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+E(5X+5Y)&amp;=&amp;5E(X+Y)=1150\\
+\textrm{SD}(5X+5Y)&amp;=&amp;5\textrm{SD}(X+Y)=47.17.
+\end{aligned}</annotation></semantics></math></strong></p></li>
+</ol>
+<p>On weekends, my partner makes Quiz his breakfast instead. She is more
+reliable than me. Assume the average amount of biscuits she gives Quiz
+for breakfast is 80g, with a standard deviation of 2g. Assume the
+average weight of meat she gives Quiz for breakfast is 150g, with a
+standard deviation of 3g. Assume that the same independence results as
+above hold for these breakfasts, and that the breakfasts my partner
+serves Quiz are independent of the ones I serve him.</p>
+<ol>
+<li><p>What is the mean and standard deviation of the total weight of
+Quiz’s breakfast over an entire week (five week days and two weekend
+days)?</p>
+<p><strong>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mn>2</mn></msub><annotation encoding="application/x-tex">X_2</annotation></semantics></math>
+be the random variable representing how many biscuits Quiz gets in on a
+weekend morning, in grammes. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mn>2</mn></msub><annotation encoding="application/x-tex">Y_2</annotation></semantics></math>
+be the random variable representing how much meat Quiz gets on a weekend
+morning, also in grammes. We are told we can assume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mn>2</mn></msub><annotation encoding="application/x-tex">X_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mn>2</mn></msub><annotation encoding="application/x-tex">Y_2</annotation></semantics></math>
+are independent of each other, and of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.</strong></p>
+<p><strong>We want to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo>+</mo><mn>2</mn><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Y</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(5X+5Y+2X_1+2Y_1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo>+</mo><mn>2</mn><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Y</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\textrm{SD}(5X+5Y+2X_1+2Y_1)</annotation></semantics></math>.
+We can use the same equations as previously:</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo>+</mo><mn>2</mn><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Y</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>5</mn><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><msub><mi>Y</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>1150</mn><mo>+</mo><mn>460</mn><mo>=</mo><mn>1610</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mtext mathvariant="normal">SD</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo>+</mo><mn>2</mn><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Y</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><msqrt><mrow><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mi>X</mi><mo>+</mo><mn>5</mn><mi>Y</mi><mo>+</mo><mn>2</mn><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Y</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><msqrt><mrow><mn>25</mn><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>4</mn><mtext mathvariant="normal">Var</mtext><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><msub><mi>Y</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><msqrt><mrow><mn>25</mn><mo>×</mo><mn>89</mn><mo>+</mo><mn>4</mn><mo>×</mo><mn>13</mn></mrow></msqrt><mo>=</mo><mn>47.72</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+E(5X+5Y+2X_2+2Y_2)&amp;=&amp;5E(X+Y)+2E(X_2+Y_2)\\ &amp;=&amp;1150+460=1610\\
+\textrm{SD}(5X+5Y+2X_2+2Y_2)&amp;=&amp;\sqrt{\textrm{Var}(5X+5Y+2X_2+2Y_2)}\\
+&amp;=&amp;\sqrt{25\textrm{Var}(X+Y)   + 4\textrm{Var}(X_2+Y_2)}\\
+&amp;=&amp;\sqrt{25\times89+4\times13}=47.72.
+\end{aligned}</annotation></semantics></math></strong></p></li>
+<li><p>I decide to stop measuring out biscuits and meat independently,
+instead trying to measure out less meat than usual if I think I’ve
+measured our more biscuits than usual. What effect will that have on the
+covariance between biscuit weight and meat weight?</p>
+<p><strong>Under this new approach, a higher than average value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+is expected to lead to a lower than average value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+This will change the covariance from 0 (from when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+were independent) to being negative.</strong></p></li>
+</ol></li>
+<li><p>A probability professor sets the same online quiz every year for
+her students. She knows (by looking at submissions from previous years),
+students have a 10% probability of scoring full marks. She also knows
+that there is a 1% probability a student will cheat.</p>
+<p>The professor marks the first submission to the online quiz, and
+gives it full marks.</p>
+<ol>
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+be the event a student cheats, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+be the event a student scores full marks on the online quiz. What would
+be a sensible probability value for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(F|C)</annotation></semantics></math>,
+and why?</p>
+<p><strong>Essentially any value higher than 0.1 would be defensible
+here, on the assumption that a student is more likely to get full marks
+if they cheat than if they don’t (though I have occasionally seen
+students copy embarrassingly obvious wrong answers from their friends
+and hand them in). Assuming there are accurate “cheat sheets” available
+for the professor’s module, it wouldn’t be unreasonable to assume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P(F|C)=1</annotation></semantics></math>.
+Certainly, that makes the maths easier.</strong></p></li>
+<li><p>Using your value for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(F|C)</annotation></semantics></math>,
+find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="prefix">|</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(C|F)</annotation></semantics></math>.</p>
+<p><strong>We can use Bayes Theorem here.</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="prefix">|</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="prefix">|</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mn>1</mn><mo>×</mo><mn>0.01</mn></mrow><mn>0.1</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.1</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(C|F)&amp;=&amp;\frac{P(F|C)P(C)}{P(F)}\\
+&amp;=&amp;\frac{1\times0.01}{0.1}\\
+&amp;=&amp;0.1.
+\end{aligned}</annotation></semantics></math></strong></p></li>
+</ol></li>
+<li><p>(Tricky!) It is the year 2090, and some human beings are being
+born with the Y-gene, a genetic mutation which gives people superpowers
+on their 18th birthday. Professor Y is attempting to create a test that
+can be used to check whether someone younger than 18 has the Y gene. The
+test will return either a positive result (suggesting the test subject
+has the Y-gene), or a negative result (suggesting the test subject does
+not have the Y-gene).</p>
+<p>Only 0.01% of the population have the Y-gene. Professor Y’s test is
+90% accurate, meaning 90% of people with the Y-gene get a positive
+result, and 90% of people without the Y-gene get a negative result.</p>
+<p>Local youth Scat Sombers is given the test, which comes back
+positive.</p>
+<ol>
+<li><p>What is the probability Scat Sombers has the Y-gene?</p>
+<p><strong>We can use Bayes Theorem here again, but with a bit of a
+wrinkle. We’ll let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+represent the event of someone having the Y gene, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>
+represent the event of a positive test. We know
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0.0001</mn></mrow><annotation encoding="application/x-tex">P(Y)=0.0001</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">P(+|Y)=0.9</annotation></semantics></math>.</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="prefix">|</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mn>0.9</mn><mo>×</mo><mn>0.0001</mn></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mn>0.00009</mn><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(Y|+)&amp;=&amp;\frac{P(+|Y)P(Y)}{P(+)}\\
+&amp;=&amp;\frac{0.9\times0.0001}{P(+)}\\
+&amp;=&amp;\frac{0.00009}{P(+)}
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>So how do we find the probability of a positive result? This
+is a bit tricky, perhaps, because the probability of a positive result
+depends on whether the person being tested has the Y-gene or
+not!</strong></p>
+<p><strong>Happily, we can use the additive rule to come to our rescue.
+The probability of a positive result must equal the probability of a
+positive result AND a Y-gene, plus the probability of a positive result
+AND no Y-gene:</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(+)&amp;=&amp;P(+\textrm{ AND } Y) + P(+\textrm{ AND } Y^C).
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>We also know from how conditional probabilities work
+that</strong>
+<strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> AND </mtext><mspace width="0.333em"></mspace></mrow><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.9</mn><mo>×</mo><mn>0.0001</mn><mo>+</mo><mn>0.1</mn><mo>×</mo><mn>0.9999</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.10008</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(+\textrm{ AND } Y) + P(+\textrm{ AND } Y^C)&amp;=&amp;P(+|Y)P(Y) + P(+|Y^C)P(Y^C)\\
+&amp;=&amp;0.9\times0.0001+0.1\times0.9999\\
+&amp;=&amp;0.10008.
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>Note how close this value is to 0.1. This is because the
+Y-gene is so rare, the probabilities related to it are barely
+noticeable. The vast majority of people have no Y-gene, and those people
+have a 10% probability of a positive result. Hence, the overall
+probability of someone getting a positive result must be very close to
+10% as well.</strong></p>
+<p><strong>We can now find the probability we were asked
+for:</strong></p>
+<p><strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="prefix">|</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mn>0.00009</mn><mn>0.10008</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.000899</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(Y|+)&amp;=&amp;\frac{0.00009}{0.10008}\\
+&amp;=&amp; 0.000899
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>So Scat is about nine times more likely to have the Y-gene
+after a positive test than before the test was administered. That’s not
+a trivial difference, but he’s still much more likely to not have the
+Y-gene than to have it.</strong></p></li>
+<li><p>Professor X runs the test on Scat Sombers a second time, and
+receives another positive result. Assuming that the test results are
+independent on each other, conditional on whether or not Scat has the
+Y-gene, what is now the probability Scat Sombers has the Y-gene?</p>
+<p><strong>We can answer this question in quite a similar way to how we
+answered the last one. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mo>+</mo></mrow><annotation encoding="application/x-tex">++</annotation></semantics></math>
+be the event of two positive tests in a row. We are told we have
+independence of trials conditional on whether Scat has the Y-gene. This
+means that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(++|Y)=P(+|Y)P(+|Y)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(++|Y^C)=P(+|Y^C)P(+|Y^C)</annotation></semantics></math>.
+Note that it <strong>doesn’t</strong> mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(++)=P(+)P(+)</annotation></semantics></math>.
+Every positive test makes it more likely Scat has the Y-gene, so the
+more positive tests we get in a row, the bigger
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(+)</annotation></semantics></math>
+gets for the next test. This is one of those situations in which random
+events become independent when you learn (or in this case assume) an
+additional piece of information.</strong></p>
+<p><strong>We now use</strong>
+<strong><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="prefix">|</mo><mo>+</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>Y</mi><mi>C</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mn>0.9</mn><mo>×</mo><mn>0.9</mn><mo>×</mo><mn>0.0001</mn></mrow><mrow><mn>0.9</mn><mo>×</mo><mn>0.9</mn><mo>×</mo><mn>0.0001</mn><mo>+</mo><mn>0.1</mn><mo>×</mo><mn>0.1</mn><mo>×</mo><mn>0.9999</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo></mtd><mtd columnalign="right" style="text-align: right"><mn>0.00804</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+P(Y|++)&amp;=&amp;\frac{P(++|Y)P(Y)}{P(++)}\\
+&amp;=&amp;\frac{P(++|Y)P(Y)}{P(++|Y)P(Y)+P(++|Y^C)P(Y^C)}\\
+&amp;=&amp;\frac{P(+|Y)P(+|Y)P(Y)}{P(+|Y)P(+|Y)P(Y)+P(+|Y^C)P(+|Y^C)P(Y^C)}\\
+&amp;=&amp;\frac{0.9\times0.9\times 0.0001}{0.9\times0.9\times 0.0001+0.1\times0.1\times0.9999}\\
+&amp;=&amp;0.00804
+\end{aligned}</annotation></semantics></math></strong></p>
+<p><strong>So now Scat is about 80 times more likely to have the Y-gene
+after two positive test than before either test was administered. Even
+after two tests, though, there is still more than a 99% chance he
+doesn’t have the Y-gene.</strong></p></li>
+</ol></li>
+</ol>
+</body>
+</html>

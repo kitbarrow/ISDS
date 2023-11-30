@@ -352,4 +352,3 @@ for (i in 2:8) {
   lines(1:p, bss_mses[i, ], col = i)
   points(best_cvs[i], bss_mses[i, best_cvs[i]], pch = 16, col = i)
 }
-

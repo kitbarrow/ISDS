@@ -1,0 +1,481 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>ISDS Workshop 6</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<meta content='W6.tex' name='src' /> 
+<style>
+     .cmr-10x-x-109{}
+.cmr-6{font-size:54%;}
+.cmmi-6{font-size:54%;font-style: italic;}
+.cmsy-6{font-size:54%;}
+.cmr-8{font-size:72%;}
+.cmmi-8{font-size:72%;font-style: italic;}
+.cmsy-8{font-size:72%;}
+.cmmi-10x-x-109{font-style: italic;}
+.cmsy-10x-x-109{}
+.cmbx-10x-x-109{ font-weight: bold;}
+.cmtt-10x-x-109{font-family: monospace,monospace;}
+.cmbsy-10x-x-109{font-weight: bold;}
+.cmbsy-10x-x-109{font-weight: bold;}
+.cmbsy-10x-x-109{font-weight: bold;}
+.cmbsy-8{font-size:72%;font-weight: bold;}
+.cmbsy-8{font-weight: bold;}
+.cmbsy-8{font-weight: bold;}
+.cmbsy-6{font-size:54%;font-weight: bold;}
+.cmbsy-6{font-weight: bold;}
+.cmbsy-6{font-weight: bold;}
+.cmex-10x-x-109{}
+.cmex-8{font-size:72%;}
+.cmex-7x-x-85{font-size:54%;}
+.msam-10x-x-109{}
+.msam-10x-x-80{font-size:72%;}
+.msam-7x-x-85{font-size:54%;}
+.msbm-10x-x-109{}
+.msbm-10x-x-80{font-size:72%;}
+.msbm-7x-x-85{font-size:54%;}
+.tctt-1095{font-family: monospace,monospace;}
+p{margin-top:0;margin-bottom:0}
+p.indent{text-indent:0;}
+p + p{margin-top:1em;}
+p + div, p + pre {margin-top:1em;}
+div + p, pre + p {margin-top:1em;}
+a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
+@media print {div.crosslinks {visibility:hidden;}}
+table.tabular{border-collapse: collapse; border-spacing: 0;}
+a img { border-top: 0; border-left: 0; border-right: 0; }
+center { margin-top:1em; margin-bottom:1em; }
+td center { margin-top:0em; margin-bottom:0em; }
+.Canvas { position:relative; }
+math { text-indent: 0em; }
+li p.indent { text-indent: 0em }
+li p:first-child{ margin-top:0em; }
+li p:last-child, li div:last-child { margin-bottom:0.5em; }
+li p:first-child{ margin-bottom:0; }
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+.enumerate1 {list-style-type:decimal;}
+.enumerate2 {list-style-type:lower-alpha;}
+.enumerate3 {list-style-type:lower-roman;}
+.enumerate4 {list-style-type:upper-alpha;}
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+div.newtheorem .head{font-weight: bold;}
+.obeylines-h,.obeylines-v {white-space: nowrap; }
+div.obeylines-v p { margin-top:0; margin-bottom:0; }
+.overline{ text-decoration:overline; }
+.overline img{ border-top: 1px solid black; }
+td.displaylines {text-align:center; white-space:nowrap;}
+.centerline {text-align:center;}
+.rightline {text-align:right;}
+pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.fbox {display:table}
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.minipage{width:100%;}
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+div.center div {text-align: left;}
+div.flushright, div.flushright div.flushright {text-align: right;}
+div.flushright div {text-align: left;}
+div.flushleft {text-align: left;}
+.underline{ text-decoration:underline; }
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+.framebox-c {text-align:center;}
+.framebox-l {text-align:left;}
+.framebox-r {text-align:right;}
+span.thank-mark{ vertical-align: super }
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 0px; margin:0px; }
+.hline td, .cline td{ padding: 0; }
+.hline hr, .cline hr{border:none;border-top:1px solid black;}
+.hline {border-top: 1px solid black;}
+.tabbing-right {text-align:right;}
+div.float, div.figure {margin-left: auto; margin-right: auto;}
+div.float img {text-align:center;}
+div.figure img {text-align:center;}
+.marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+.marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+.reversemarginpar{float:left;}
+.equation td{text-align:center; vertical-align:middle; }
+td.eq-no{ width:5%; }
+table.equation { width:100%; } 
+div.math-display, div.par-math-display{text-align:center;}
+mtr.hline mtd{ border-bottom:black solid 1px; padding-top:2px; padding-bottom:0em; }
+mtr.hline mtd mo{ display:none }
+math .texttt { font-family: monospace; }
+math .textit { font-style: italic; }
+math .textsl { font-style: oblique; }
+math .textsf { font-family: sans-serif; }
+math .textbf { font-weight: bold; }
+mo.MathClass-op + mi{margin-left:0.3em}
+mi + mo.MathClass-op{margin-left:0.3em}
+ math mstyle[mathvariant="bold"] { font-weight: bold; font-style: normal; } 
+ math mstyle[mathvariant="normal"] { font-weight: normal; font-style: normal; } 
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.index-item, .index-subitem, .index-subsubitem {display:block}
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+div.caption span.id{font-weight: bold; white-space: nowrap; }
+h1.partHead{text-align: center}
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+.verse{white-space:nowrap; margin-left:2em}
+div.maketitle {text-align:center;}
+h2.titleHead{text-align:center;}
+div.maketitle{ margin-bottom: 2em; }
+div.author, div.date {text-align:center;}
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+div.author{white-space: nowrap;}
+div.abstract p {margin-left:5%; margin-right:5%;}
+div.abstract {width:100%;}
+.abstracttitle{text-align:center;margin-bottom:1em;}
+figure.float, div.figure {margin-left: auto; margin-right: auto;}
+figure.figure {text-align:center;}
+figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
+figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
+p + figcaption, img + figcaption{margin-top: 1em;}
+.abstract{margin:1em;}
+.rotatebox{display: inline-block;}
+     body {
+       counter-reset: a b
+     }
+   
+   
+     /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+     html {
+       line-height: 1.1;
+       -ms-text-size-adjust: 100%;
+       -webkit-text-size-adjust: 100%
+     }
+   
+     body {
+       margin: 2em
+     }
+   
+     h1 {
+       font-size: 2em;
+       margin: .67em 0
+     }
+   
+     hr {
+       box-sizing: content-box;
+       height: 0;
+       overflow: visible
+     }
+   
+     main {
+       display: block
+     }
+   
+     code { background-color: #eee; }
+   
+     pre {
+       font-family: monospace, monospace;
+       font-size: 1em
+     }
+   
+     pre code {
+     background-color: #eee;
+     border: 1px solid #999;
+     display: block;
+     padding: 20px;
+   }
+   
+     a {
+       background-color: transparent;
+       -webkit-text-decoration-skip: objects
+     }
+   
+     b,
+     strong {
+       font-weight: inherit;
+       font-weight: bolder
+     }
+   
+     body,
+     html {
+       color: rgba(0, 0, 0, .75);
+       font-size: 16px;
+       font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+       font-variant-ligatures: common-ligatures;
+       line-height: 1.67;
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale
+     }
+   
+     dl,
+     ol,
+     p,
+     ul {
+       margin: 1.2em 0
+     }
+   
+     h1,
+     h2,
+     h3,
+     h4,
+     h5,
+     h6 {
+       margin: 1.8em 0;
+       line-height: 1.33
+     }
+   
+     h1:after,
+     h2:after {
+       content: "";
+       display: block;
+       position: relative;
+       top: .33em;
+       border-bottom: 1px solid hsla(0, 0%, 50%, .33)
+     }
+   
+     ol ol,
+     ol ul,
+     ul ol,
+     ul ul {
+       margin: 0
+     }
+   
+     dt {
+       font-weight: 700
+     }
+   
+     a {
+       color: #0c93e4;
+       text-decoration: underline;
+       text-decoration-skip: ink
+     }
+   
+     a:focus,
+     a:hover {
+       text-decoration: none
+     }
+   
+   
+     hr {
+       border: 0;
+       border-top: 1px solid hsla(0, 0%, 50%, .33);
+       margin: 2em 0
+     }
+   
+   
+     table {
+       background-color: transparent;
+       border-collapse: collapse;
+       border-spacing: 0
+     }
+   
+     td,
+     th {
+       border-right: 1px solid #626262;
+       border-left: 1px solid #626262;
+       padding: 8px 12px
+     }
+   
+   
+     td {
+       border-top: 1px solid #626262
+     }
+   
+   
+      .page-break-after {
+       page-break-after: always
+     }
+   
+   
+   
+   </style>
+</head><body>
+     <h1>Workshop 6 Practical Sheet</h1>
+<!-- l. 53 --><p class='noindent'>In this document, we’ll focus on using <span class='cmtt-10x-x-109'>R </span>to generate simple linear regression
+models, using the <span class='cmtt-10x-x-109'>lm </span>function. We will see how <span class='cmtt-10x-x-109'>lm </span>simplifies the process of model
+fitting and parameter estimation. Finally, we will assess the quality of the
+regression and use residual diagnostic plots to assess the validity of the regression
+assumptions.
+</p><!-- l. 56 --><p class='noindent'><span class='cmbx-10x-x-109'>Part 1: The </span><span class='cmtt-10x-x-109'>faithful </span><span class='cmbx-10x-x-109'>Data Set</span>
+</p><!-- l. 59 --><p class='noindent'>In this section, we will perform regression-related EDA, fit a simple linear
+regression (SLR) model, and test the assumptions of the model. We will
+do all this using the <span class='cmtt-10x-x-109'>faithful </span>data set we last looked at in Workshop
+4.
+</p><!-- l. 63 --><p class='noindent'><span class='cmbx-10x-x-109'>1.1 Elementary Data Analysis/Correlation</span>
+</p><!-- l. 65 --><p class='noindent'>It is good practice to take a quick visual look at the data you will be using in
+your models.
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-3x1'>Are there outliers in either column of the data? Generate boxplots to
+     check.
+     </li>
+<li class='enumerate' id='x1-5x2'>To  save  typing  later,  let’s  extract  the  columns  into  two  variables.
+     Create a vector <span class='cmtt-10x-x-109'>w </span>that contains the vector of waiting times, and a
+     second vector <span class='cmtt-10x-x-109'>d </span>that contains the durations of eruptions.
+     </li>
+<li class='enumerate' id='x1-7x3'>Plot the waiting times (y-axis) against the durations (x-axis). Is there
+     evidence of a linear relationship? Use the <span class='cmtt-10x-x-109'>cor </span>function to assess the
+     strength of that linear relationship.
+     </li>
+<li class='enumerate' id='x1-9x4'>Is the <span class='cmtt-10x-x-109'>cor </span>function what we want to use here? Check if the values in
+     each of the two variables are normally distributed.
+     </li>
+
+<li class='enumerate' id='x1-11x5'>Use the <span class='cmtt-10x-x-109'>method=‘‘spearman’’ </span>argument inside the <span class='cmtt-10x-x-109'>cor </span>function to
+     generate the Spearman’s rank correlation coefficient.
+     </li>
+<li class='enumerate' id='x1-13x6'>
+     <!-- l. 72 --><p class='noindent'>Find the Kendall’s tau correlation coefficient.
+     </p><!-- l. 74 --><p class='noindent'>(Note that here we are simply checking there is any point to applying
+     simple linear regression at all. Next week, when we consider multiple
+     linear regressions, we tend to look at pairs of predictor variables using
+     a scatter diagram, this time hoping we <span class='cmbx-10x-x-109'>don’t </span>see much in the way of
+     a linear relationship.)</p></li></ol>
+<!-- l. 77 --><p class='noindent'>
+
+</p><!-- l. 79 --><p class='noindent'><span class='cmbx-10x-x-109'>1.2 The Linear Regression Model</span>
+</p><!-- l. 81 --><p class='noindent'>The model we’re interested in fitting to these data is a simple linear relationship
+between the waiting times, <span class='cmtt-10x-x-109'>w</span>, and the eruption durations, <span class='cmtt-10x-x-109'>d</span>. The model equation
+is
+<!-- tex4ht:inline --></p><!-- l. 83 --><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+<mtable class='eqnarray-star' columnalign='right center left'>
+<mtr><mtd class='eqnarray-1'> <mi>w</mi> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>β</mi></mrow><mrow><mn>0</mn></mrow></msub> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>d</mi> <mo class='MathClass-bin'>+</mo> <mi>𝜖</mi></mtd><mtd class='eqnarray-2'>   </mtd><mtd class='eqnarray-3'>   </mtd><mtd class='eqnarray-4'> <mtext class='eqnarray'></mtext></mtd>                                              </mtr></mtable>
+</mrow></math>
+<!-- l. 85 --><p class='nopar'>
+</p><!-- l. 87 --><p class='noindent'>The <span class='cmtt-10x-x-109'>lm </span>function in <span class='cmtt-10x-x-109'>R </span>computes the least-squares linear regression for us,
+and returns an object which summarises all aspects of the regression
+fit.
+</p><!-- l. 89 --><p class='noindent'>Suppose our response variable is <!-- l. 89 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>Y</mi> </mrow></math>,
+and we have a predictor variable <!-- l. 89 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>X</mi></math>,
+with observations stored in <span class='cmtt-10x-x-109'>R </span>as the vectors <span class='cmtt-10x-x-109'>y </span>and <span class='cmtt-10x-x-109'>x </span>respectively. To fit <span class='cmtt-10x-x-109'>y </span>as a
+linear function of <span class='cmtt-10x-x-109'>x</span>, we use the following command:
+</p><!-- l. 91 --><p class='noindent'><span class='cmtt-10x-x-109'>model </span><!-- l. 91 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>&lt;</mo></mrow></math><span class='cmtt-10x-x-109'>-
+lm(y </span><!-- l. 91 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>∼</mo></mrow></math>
+<span class='cmtt-10x-x-109'>x)</span>
+</p><!-- l. 93 --><p class='noindent'>Alternatively, if we have a data frame called <span class='cmtt-10x-x-109'>dataset </span>with variables in columns
+named <span class='cmtt-10x-x-109'>‘‘a’’ </span>and <span class='cmtt-10x-x-109'>‘‘b’’ </span>then we could fit the linear regression of a on
+b<span class='footnote-mark'><a href='W62.html#fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-15f1'></a> 
+without having to extract the columns into vectors. We do this by specifying a
+data argument:
+
+</p><!-- l. 95 --><p class='noindent'><span class='cmtt-10x-x-109'>model </span><!-- l. 95 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>&lt;</mo></mrow></math><span class='cmtt-10x-x-109'>-
+lm(a </span><!-- l. 95 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>∼</mo></mrow></math>
+<span class='cmtt-10x-x-109'>b, data=dataset)</span>
+</p><!-- l. 97 --><p class='noindent'>The tilde symbol (the “<!-- l. 97 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>∼</mo></mrow></math>”
+symbol) in this expression should be read as “is
+modelled as”. Note that <span class='cmtt-10x-x-109'>R </span>always automatically include a
+y-intercept<span class='footnote-mark'><a href='W63.html#fn2x0'><sup class='textsuperscript'>2</sup></a></span><a id='x1-16f2'></a> , so we only
+need to specify the <!-- l. 97 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>X</mi></math>
+and <!-- l. 98 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>Y</mi> </mrow></math>
+variables.
+</p><!-- l. 101 --><p class='noindent'>We can inspect the fitted regression object returned from <span class='cmtt-10x-x-109'>lm </span>to get a simple
+summary of the estimated model parameters. To do this, simply enter the name
+of your model into <span class='cmtt-10x-x-109'>R</span>.
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-17x'>Use <span class='cmtt-10x-x-109'>lm </span>to fit waiting times <span class='cmtt-10x-x-109'>w </span>as a linear function of eruption durations
+     d. Save the result of the regression function to model.
+     </li>
+<li class='enumerate' id='x1-18x'>Note the values of the coefficients (the y-intercept and gradient given).
+     What meaning can be taken from these values, given the meaning of
+     the predictor and response variables?</li></ol>
+<!-- l. 115 --><p class='noindent'><span class='cmtt-10x-x-109'>R </span>also has a number of functions that, when applied to the results of a
+linear regression, will return key quantities such as residuals and fitted
+values:
+</p><!-- l. 119 --><p class='noindent'><span class='cmtt-10x-x-109'>coef(model) </span>and <span class='cmtt-10x-x-109'>coefficicents(model) </span>will return the estimated model coefficients
+as a vector <!-- l. 119 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><msub><mrow><mi>b</mi></mrow><mrow><mn>0</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>b</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>.
+</p><!-- l. 121 --><p class='noindent'><span class='cmtt-10x-x-109'>fitted(model) </span>and <span class='cmtt-10x-x-109'>fitted.values(model) </span>will return the vector of fitted values,
+<!-- l. 121 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>ŷ</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mn>0</mn></mrow></msub> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>b</mi></mrow><mrow><mn>1</mn></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>.
+</p><!-- l. 123 --><p class='noindent'><span class='cmtt-10x-x-109'>resid(model) </span>and <span class='cmtt-10x-x-109'>residuals(model) </span>will return the vector of residual values,
+<!-- l. 123 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>y</mi></mrow><mrow><mi>i</mi></mrow></msub><msub><mrow><mi>ŷ</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>.ˆ
+     </p><ol class='enumerate1'>
+
+<li class='enumerate' id='x1-19x'>Use the <span class='cmtt-10x-x-109'>coef </span>function to extract the coefficients of the fitted linear
+     regression model as a vector.
+     </li>
+<li class='enumerate' id='x1-20x'>Extract the vector of residuals from model, and use this to compute
+     the sum of squares of the residuals as <span class='cmtt-10x-x-109'>lsq.Q</span>.</li></ol>
+<!-- l. 130 --><p class='noindent'>We can easily extract and inspect the coefficients and residuals of the linear
+model, but to obtain a more complete statistical summary of the model we use
+the <span class='cmtt-10x-x-109'>summary </span>function: <span class='cmtt-10x-x-109'>summary(model)</span>
+</p><!-- l. 132 --><p class='noindent'>There is a lot of information in this output, but the key quantities to focus on
+today are: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Residuals:  simple  summary  statistics  of  the  residuals  from  the
+     regression.
+     </li>
+     <li class='itemize'>Coefficients: a table of information about the fitted coefficients. Its
+     columns are: The label of the fitted coefficient: The first will usually
+     be (Intercept), and subsequent rows will be named after the other
+     predictor variables in the model.
+     </li>
+     <li class='itemize'>The  Estimate  column  gives  the  least  squares  estimates  of  the
+     coefficients.
+     </li>
+     <li class='itemize'>Residual standard error: This gives se the square root of the unbiased
+     estimate of the residual variance.
+     </li>
+     <li class='itemize'>Multiple R-Squared: This is the R2 value defined in lectures as the
+     squared correlation coefficient and is a measure of goodness of fit.</li></ul>
+
+<!-- l. 143 --><p class='noindent'>We will consider the remaining values in next week’s workshop.
+</p><!-- l. 145 --><p class='noindent'>We can also use the summary to access the individual elements of the regression
+summary output. If we save the results of a call to the summary function of a <span class='cmtt-10x-x-109'>lm</span>
+object as summ:
+</p><!-- l. 149 --><p class='noindent'><span class='cmtt-10x-x-109'>summ</span><span class='tctt-1095'>$</span><span class='cmtt-10x-x-109'>residuals </span>extracts the regression residuals as <span class='cmtt-10x-x-109'>resid </span>above.
+</p><!-- l. 151 --><p class='noindent'><span class='cmtt-10x-x-109'>summ</span><span class='tctt-1095'>$</span><span class='cmtt-10x-x-109'>coefficients </span>returns the <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>p</mi> <mo class='MathClass-bin'>×</mo> <mn>4</mn></mrow></math>
+coefficient summary table with columns for the estimated coefficient, its standard
+error, t-statistic and corresponding (two-sided) p-value (again, we’ll take a closer
+look at this next week).
+</p><!-- l. 154 --><p class='noindent'><span class='cmtt-10x-x-109'>summ</span><span class='tctt-1095'>$</span><span class='cmtt-10x-x-109'>sigma </span>extracts the regression standard error.
+</p><!-- l. 156 --><p class='noindent'><span class='cmtt-10x-x-109'>R</span>’s estimate for the standard deviation of the errors in the model.
+</p><!-- l. 158 --><p class='noindent'><span class='cmtt-10x-x-109'>summ</span><span class='tctt-1095'>$</span><span class='cmtt-10x-x-109'>r.squared </span>returns the coefficient of determination
+<!-- l. 158 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msup></math>.
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-21x'>Apply  the  summary  function  to  model  to  produce  the  regression
+     summary for our example.
+     </li>
+<li class='enumerate' id='x1-22x'>Use    the    summary    to    find    the    coefficient    estimates,    the
+     residual   standard   error,   and   the   coefficient   of   determination
+     <!-- l. 163 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msup></math>.
+     </li>
+<li class='enumerate' id='x1-23x'>Extract the value of <!-- l. 165 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msup></math>
+     from the <span class='cmtt-10x-x-109'>summary </span>output as a new variable. What does the value of
+     <!-- l. 165 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msup></math>
+     here tell us about the fitted linear model?</li></ol>
+<!-- l. 168 --><p class='noindent'><span class='cmbx-10x-x-109'>Part 1.3 Checking Assumptions</span>
+</p><!-- l. 170 --><p class='noindent'>In this final section, we will use the <span class='cmtt-10x-x-109'>plot </span>function to check whether the four
+assumptions for a simple linear regression model hold for the model we have
+generated. We will also consider whether there are any points in the model which
+have high influence.
+     </p><ol class='enumerate1'>
+
+<li class='enumerate' id='x1-24x'>Enter your model into the <span class='cmtt-10x-x-109'>plot </span>function. Remember that the function
+     will cycle through four plots, and that you have to click on the plot
+     window each time to get the next one.
+     </li>
+<li class='enumerate' id='x1-25x'>Evaluate assumptions one, two and four using the first three plots.
+     </li>
+<li class='enumerate' id='x1-26x'>Identify which points have high leverage using the fourth plot. Try
+     removing these points from the data and recalculating the model. Does
+     this make any difference to a) the performance of the model, b) the
+     extent to which you believe the model assumptions hold?
+     </li>
+<li class='enumerate' id='x1-28x1'>Evaluate assumption three by calculating the autocorrelation of the
+     residuals. Does our assumption of independence hold?</li></ol>
+<!-- l. 178 --><p class='noindent'>Once you have finished Part 1.3, you should feel free to spend the remainder of
+Workshop 5 working on your group mini-project.
+</p>
+ 
+</body> 
+</html>

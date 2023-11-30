@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Workshop 3 R Practical Sheet</title>
+  <style>
+	body {
+		counter-reset: a b
+	}
+
+
+	/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+	html {
+		line-height: 1.1;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%
+	}
+
+	body {
+		margin: 2em
+	}
+
+	h1 {
+		font-size: 2em;
+		margin: .67em 0
+	}
+
+	hr {
+		box-sizing: content-box;
+		height: 0;
+		overflow: visible
+	}
+
+	main {
+		display: block
+	}
+
+	code { background-color: #eee; }
+
+	pre {
+		font-family: monospace, monospace;
+		font-size: 1em
+	}
+
+	pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
+
+	a {
+		background-color: transparent;
+		-webkit-text-decoration-skip: objects
+	}
+
+	b,
+	strong {
+		font-weight: inherit;
+		font-weight: bolder
+	}
+
+	body,
+	html {
+		color: rgba(0, 0, 0, .75);
+		font-size: 16px;
+		font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+		font-variant-ligatures: common-ligatures;
+		line-height: 1.67;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale
+	}
+
+	dl,
+	ol,
+	p,
+	ul {
+		margin: 1.2em 0
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 1.8em 0;
+		line-height: 1.33
+	}
+
+	h1:after,
+	h2:after {
+		content: "";
+		display: block;
+		position: relative;
+		top: .33em;
+		border-bottom: 1px solid hsla(0, 0%, 50%, .33)
+	}
+
+	ol ol,
+	ol ul,
+	ul ol,
+	ul ul {
+		margin: 0
+	}
+
+	dt {
+		font-weight: 700
+	}
+
+	a {
+		color: #0c93e4;
+		text-decoration: underline;
+		text-decoration-skip: ink
+	}
+
+	a:focus,
+	a:hover {
+		text-decoration: none
+	}
+
+
+	hr {
+		border: 0;
+		border-top: 1px solid hsla(0, 0%, 50%, .33);
+		margin: 2em 0
+	}
+
+
+	table {
+		background-color: transparent;
+		border-collapse: collapse;
+		border-spacing: 0
+	}
+
+	td,
+	th {
+		border-right: 1px solid #626262;
+		border-left: 1px solid #626262;
+		padding: 8px 12px
+	}
+
+
+	td {
+		border-top: 1px solid #626262
+	}
+
+
+   .page-break-after {
+		page-break-after: always
+	}
+
+
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1>Workshop 3 R Practical Sheet</h1>
+
+<p>In this document, we’ll focus on using <code>R</code> to generate a)
+probabilities and b) realisations of random variables. <code>R</code> is
+capable of doing both of these very quickly, if you let it know what
+type of distribution you’re interested in</p>
+
+<h2>Part 1: Discrete RV Probabilities</h2>
+
+<p>In this section, we will focus on probabilities for discrete and
+continuous distributions.</p>
+<p>If we wanted to, there’s nothing stopping us from directly
+programming probability mass functions into <code>R</code>. We have from
+the Week 3 videos, for instance, that if
+<em>X</em> ∼ <em>Pois</em>(<em>λ</em>), then
+<em>P</em>(<em>X</em>=<em>x</em>) = <em>e</em><sup>−<em>λ</em></sup>
+multiplied by <em>λ</em><sup><em>x</em></sup>, divided by
+<em>x</em>!.</p>
+<p>We could write the function</p>
+
+<pre>
+<code>poisprobs&lt;-function(x,lambda){
+ans&lt;-(exp(-lambda)*(lambda)^x)/factorial(x)
+return(ans)}</code>
+</pre>
+
+<ol>
+<li><p>Enter the above function into <code>R</code>, and use it to find
+<em>P</em>(<em>X</em>=4) when <em>λ</em> = 3.</p></li>
+<li><p>Try writing a function in <code>R</code>, with inputs
+<code>x,n,p</code>, which returns the probability
+<em>P</em>(<em>X</em>=<em>x</em>) when
+<em>X</em> ∼ <em>Bin</em>(<em>n</em>,<em>p</em>). <strong>Hint:</strong>
+the binomial coefficient <em>n</em> choose <em>k</em> can be found in
+<code>R</code> by inputting <code>choose(n,k)</code>.</p></li>
+</ol>
+<p>Writing functions like this every time would be a bit of a pain,
+though, so someone else has done it for us!</p>
+<ol start="3">
+<li><p>Try inputting <code>dpois(4,3)</code>. What do you
+notice?</p></li>
+</ol>
+<p>The “d” in <code>dpois</code> stands for “density”. In the videos, I
+have made a distinction between the probability <strong>mass</strong>
+functions associated with discrete random variables, and the probability
+<strong>density</strong> functions associated with continuous random
+variables. <code>R</code>, in contrast, does not make this
+distinction.</p>
+<ol start="4">
+<li><p>Try inputting <code>dbinom(2,5,0.8)</code>. What does this value
+represent? Can you get the same value using the code you wrote for
+question 2?</p></li>
+</ol>
+<p>One annoying task when dealing with discrete distributions is finding
+interval probabilities. For instance, if we have
+<em>X</em> ∼ <em>Pois</em>(8), how do we find the probability
+<em>P</em>(<em>X</em>&lt;12)? This isn’t actually
+<strong>difficult</strong> to do, using the additive
+rule:<em>P</em>(<em>X</em>&lt;12) equals the sum over <em>i</em> from 0
+to 11 of <em>P</em>(<em>X</em>=<em>i</em>).</p>
+<p>Finding each of the 12 probabilities involved is a bit of a slog,
+though.</p>
+<p>Fortunately, <code>R</code> has us covered! We could calculate such a
+probability using a <code>for</code> loop, as follows:</p>
+
+<pre>
+<code>ans&lt;-0
+for(i in 0:11){
+    ans&lt;-ans+dpois(i,8)}
+</code>
+</pre>
+
+<p>We don’t even need to do that much, though; we can just use the
+function <code>ppois</code>.</p>
+
+<ol start="5">
+<li><p>Enter the code above and use it to find
+<em>P</em>(<em>X</em>&lt;12).</p></li>
+<li><p>Use <code>ppois</code> to find the same value. Which inputs do
+you need to use with <code>ppois</code>, and in what order?</p></li>
+</ol>
+<p>Here the “p” stands for “probability”, because this function gives us
+probabilities. This is a bit confusing, perhaps, given
+<code>dpois</code> <strong>also</strong> gave us probabilities. When we
+come to look at continuous distributions, though, the density function
+itself won’t give us probabilities, and we’ll have to use the
+“probability function” in <code>R</code> instead. Note also thet what
+<code>R</code> calls the <strong>probability function</strong> is what
+we’ve defined in videos as being the <strong>cumulative distribution
+function</strong>.</p>
+<ol start="7">
+<li><p>Using just one line of code, find <em>P</em>(<em>X</em>&lt;309)
+for <em>X</em> ∼ <em>Bin</em>(400,0,9).</p></li>
+</ol>
+<p>Another useful set of functions here is <code>qpois</code>,
+<code>qbinom</code>, and so forth. Here, “q“ stands for “quantile”.
+We’ve talked about quantiles more than once before. In the context of
+random variables, a quantile of value <em>i</em> (where <em>i</em> is
+between 0 and 1) is the value the random variable will be equal to or
+less than 100<em>i</em>% of the time.</p>
+<p>This actually makes the probability function and the quantile
+distribution are inverses of each other.</p>
+<ol start="8">
+<li><p>Find the value of <code>qpois(ppois(11,8),8)</code></p></li>
+<li><p>Generate <code>x&lt;-seq(0.23,0.24,by=0.001)</code>. Find the
+value of <code>qpois(x,4)</code>. Explain the nature of the resulting
+sequence - why the jump from 2 to 3?</p></li>
+</ol>
+<h2>Part 2: Continuous RV Probabilities</h2>
+
+<p>For continuous random variables, the density function no longer gives
+us probabilities as outputs. Instead, a function such as
+<code>dnorm</code> gives us the density function of a normal
+distribution.</p>
+<p>We can draw a graph of a density function inside <code>R</code> quite
+quickly, using code such as</p>
+
+<pre><code>x&lt;-seq(-3.5,3.5,by=0.01)
+plot(x,dnorm(x),type=“l”)</code></pre>
+<ol>
+<li><p>Try drawing this same plot without the argument
+<code>type=“l”</code>. What difference does this make?</p></li>
+<li><p>Use the <code>dnorm</code> help file to learn how to express the
+density function for <em>X</em>
+<em>N</em>(<em>μ</em>,<em>σ</em><sup>2</sup>), where <em>μ</em> ≠ 0 and
+<em>σ</em><sup>2</sup> ≠ 1. Draw the density function for one such
+plot.</p></li>
+</ol>
+<p>Probabilities for continuous random variables have to be considered
+in terms of intervals. A function like makes that very simple.</p>
+<ol>
+<li><p>For <em>X</em> ∼ <em>N</em>(0,1), find
+<em>P</em>(<em>X</em>&lt;1).</p></li>
+<li><p>For <em>X</em> ∼ <em>N</em>(2,6), find
+<em>P</em>(0&lt;<em>X</em>&lt;3).</p></li>
+<li><p>For <em>X</em> ∼ <em>N</em>(−1,2), find
+<em>P</em>(<em>X</em>&gt;0).</p></li>
+</ol>
+<p>Note that, unlike with discrete random variables, there is no
+difference between being asked to find, say,
+<em>P</em>(<em>a</em>≤<em>X</em>≤<em>b</em>),
+<em>P</em>(<em>a</em>≤<em>X</em>&lt;<em>b</em>),
+<em>P</em>(<em>a</em>&lt;<em>X</em>≤<em>b</em>), and
+<em>P</em>(<em>a</em>&lt;<em>X</em>&lt;<em>b</em>) for a continuous
+random variable <em>X</em>. This is because, for example
+<em>P</em>(<em>X</em>≤<em>x</em>) equals
+<em>P</em>(<em>X</em>&lt;<em>x</em>) + <em>P</em>(<em>X</em>=<em>x</em>).</p>
+<p>(using the additive rule), and the probability of a continuous random
+variable taking a specific value is always zero.</p>
+<ol start="3">
+<li><p>Generate <code>x&lt;-seq(0.23,0.24,by=0.001)</code>. Find the
+value of <code>qexp(x,4)</code> (this is the quantile function for the
+exponential distribution). Explain the nature of the resulting sequence
+- why are there no jumps this time?</p></li>
+</ol>
+<h2>Part 3: Finding RV Realisations</h2>
+<p>We’ve now covered three of the four functions associated with
+binomial, Poisson, normal, and exponential distributions (along with
+many others) - the density function, the probability function, and the
+quantile function.</p>
+<p>The remaining function is the <strong>random generation</strong>
+function, and we’ve actually seen this before more than once. This
+function allows us to generate some number <em>n</em> of realisations
+from a specified distribution.</p>
+<ol>
+<li><p>Input <code>rexp(100,2)</code>.</p></li>
+<li><p>Draw a histogram for the 100 values you have generated.</p></li>
+<li><p>Repeat questions 15 and 16 for 1 000, 10 000, 100 000, and 1 000
+000 values. What do you notice about the histograms?</p></li>
+<li><p>Use the <code>dexp</code> function to draw the probability
+density function for <em>X</em> ∼ <em>Exp</em>(2).</p></li>
+</ol>
+<p>We’ve used histograms before as rough estimators for probability
+density functions. They can also be used to generate rough probability
+estimates when we don’t know the underlying distribution.</p>
+<p>We’ll look at an example of this in a situation where we
+<strong>do</strong> know the underlying distribution, in order to make
+what’s going on clear. In general, though, we’d only use a histogram to
+estimate probabilities in a situation where we didn’t have a probability
+distribution to use instead.</p>
+<ol>
+<li><p>Generate 1000 values for the standard normal, and draw a
+histogram of this data, using rectangles of width 0.5, beginning at -4
+and ending at 4.</p></li>
+<li><p>Find how many values lie in the rectangles between -4 and -1. Use
+this to estimate the probability <em>P</em>(<em>Z</em>&lt;−1), where
+<em>Z</em> ∼ <em>N</em>(0,1).</p></li>
+<li><p>Find the actual value of <em>P</em>(<em>Z</em>&lt;−1) using
+<code>pnorm</code>, and compare it to your answer for part 20.</p></li>
+</ol>
+</body>
+</html>
